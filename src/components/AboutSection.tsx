@@ -55,7 +55,7 @@ export const AboutSection: React.FC = () => {
             </p>
 
             <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '1.25rem' }}>
-              At <strong>Tecstellar Solutions</strong>, I expanded into professional mobile application development, building features for <strong>Counter 365</strong> (a point-of-sale retail application released on the Google Play Store) and <strong>StyleFleet</strong> (a comprehensive salon and spa operations platform with synchronized web dashboards). Working with React Native, Expo, and Supabase gave me deep appreciation for state management, cross-device ergonomics, offline data synchronization, and rigorous release validation.
+              At <strong>Textural Art Solutions</strong> (my current professional company), I lead mobile feature development, building core capabilities for <strong>Counter 365</strong> (a point-of-sale retail mobile application released on the Google Play Store) and <strong>StyleFleet</strong> (a comprehensive salon and spa operations platform with synchronized web dashboards). Working with React Native, Expo, and Supabase has given me hands-on expertise in state management, cross-device ergonomics, offline data synchronization, and rigorous release validation.
             </p>
 
             <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '1.5rem' }}>

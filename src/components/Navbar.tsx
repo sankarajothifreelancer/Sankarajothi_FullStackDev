@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { PERSONAL_INFO } from '../data/portfolioData';
-import { Menu, X, FileText, Send, ArrowUpRight, Smartphone } from 'lucide-react';
+import { Menu, X, FileText, Send, ArrowUpRight, Smartphone, Building2 } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -23,8 +24,8 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { label: 'Selected Work', href: '#projects' },
     { label: 'Mobile Apps', href: '#mobile-apps', isPill: true },
+    { label: 'Selected Work', href: '#projects' },
     { label: 'Freelance', href: '#freelance' },
     { label: 'Experience', href: '#experience' },
     { label: 'Skills', href: '#skills' },
@@ -38,11 +39,11 @@ export const Navbar: React.FC = () => {
         position: 'sticky',
         top: 0,
         zIndex: 500,
-        backgroundColor: scrolled ? 'rgba(250, 249, 246, 0.92)' : 'transparent',
-        backdropFilter: scrolled ? 'blur(12px)' : 'none',
-        WebkitBackdropFilter: scrolled ? 'blur(12px)' : 'none',
+        backgroundColor: scrolled ? 'rgba(250, 249, 246, 0.94)' : 'transparent',
+        backdropFilter: scrolled ? 'blur(16px)' : 'none',
+        WebkitBackdropFilter: scrolled ? 'blur(16px)' : 'none',
         borderBottom: scrolled ? '1px solid var(--border-light)' : '1px solid transparent',
-        transition: 'all var(--transition-normal)',
+        transition: 'all 200ms ease',
       }}
     >
       <div className="container">
@@ -79,7 +80,7 @@ export const Navbar: React.FC = () => {
                 fontWeight: 800,
                 fontSize: '1rem',
                 letterSpacing: '-0.02em',
-                boxShadow: 'var(--shadow-sm)',
+                boxShadow: '0 4px 10px rgba(15, 23, 42, 0.15)',
               }}
             >
               SK
@@ -88,7 +89,7 @@ export const Navbar: React.FC = () => {
               <div
                 style={{
                   fontFamily: 'var(--font-display)',
-                  fontWeight: 700,
+                  fontWeight: 800,
                   fontSize: '1.05rem',
                   letterSpacing: '-0.02em',
                   color: 'var(--text-primary)',
@@ -99,12 +100,12 @@ export const Navbar: React.FC = () => {
               </div>
               <div
                 style={{
-                  fontSize: '0.75rem',
-                  color: 'var(--text-muted)',
-                  fontWeight: 500,
+                  fontSize: '0.72rem',
+                  color: 'var(--accent-primary)',
+                  fontWeight: 600,
                 }}
               >
-                Full Stack & Mobile Developer
+                Mobile App Developer @ Textural Art Solutions
               </div>
             </div>
           </a>
@@ -114,7 +115,7 @@ export const Navbar: React.FC = () => {
             style={{
               display: 'none',
               alignItems: 'center',
-              gap: '1.75rem',
+              gap: '1.5rem',
             }}
             className="desktop-nav"
           >
@@ -124,18 +125,18 @@ export const Navbar: React.FC = () => {
                 href={link.href}
                 style={{
                   fontSize: '0.9rem',
-                  fontWeight: 500,
+                  fontWeight: 600,
                   color: link.isPill ? 'var(--accent-primary)' : 'var(--text-secondary)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.35rem',
-                  padding: link.isPill ? '0.25rem 0.65rem' : '0.25rem 0',
+                  padding: link.isPill ? '0.35rem 0.85rem' : '0.25rem 0',
                   borderRadius: link.isPill ? 'var(--radius-full)' : '0',
                   backgroundColor: link.isPill ? 'var(--accent-light)' : 'transparent',
-                  transition: 'color var(--transition-fast)',
+                  transition: 'all 150ms ease',
                 }}
               >
-                {link.isPill && <Smartphone size={13} />}
+                {link.isPill && <Smartphone size={14} />}
                 {link.label}
               </a>
             ))}
@@ -150,7 +151,9 @@ export const Navbar: React.FC = () => {
             }}
             className="desktop-actions"
           >
-            <a
+            <motion.a
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
               href={PERSONAL_INFO.resumePath}
               target="_blank"
               rel="noopener noreferrer"
@@ -159,11 +162,16 @@ export const Navbar: React.FC = () => {
             >
               <FileText size={15} />
               Resume
-            </a>
-            <a href="#contact" className="btn btn-primary btn-sm">
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              href="#contact"
+              className="btn btn-primary btn-sm"
+            >
               <Send size={14} />
               Contact
-            </a>
+            </motion.a>
           </div>
 
           {/* Mobile Menu Toggle Button */}
@@ -173,12 +181,13 @@ export const Navbar: React.FC = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              width: '42px',
-              height: '42px',
-              borderRadius: 'var(--radius-md)',
+              width: '44px',
+              height: '44px',
+              borderRadius: '12px',
               border: '1px solid var(--border-light)',
               backgroundColor: 'var(--bg-surface)',
               color: 'var(--text-primary)',
+              cursor: 'pointer',
             }}
             className="mobile-menu-btn"
             aria-label="Toggle navigation menu"
@@ -189,97 +198,122 @@ export const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Drawer */}
-      {mobileMenuOpen && (
-        <div
-          style={{
-            position: 'fixed',
-            top: '74px',
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: 'rgba(15, 23, 42, 0.4)',
-            backdropFilter: 'blur(4px)',
-            zIndex: 490,
-          }}
-          onClick={() => setMobileMenuOpen(false)}
-        >
-          <div
+      {/* Mobile Drawer with AnimatePresence */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             style={{
-              backgroundColor: 'var(--bg-surface)',
-              padding: '1.5rem',
-              borderBottom: '1px solid var(--border-light)',
-              boxShadow: 'var(--shadow-lg)',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '0.75rem',
-              animation: 'fadeIn 200ms ease-out',
+              position: 'fixed',
+              top: '74px',
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: 'rgba(15, 23, 42, 0.45)',
+              backdropFilter: 'blur(6px)',
+              zIndex: 490,
             }}
-            onClick={(e) => e.stopPropagation()}
+            onClick={() => setMobileMenuOpen(false)}
           >
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  style={{
-                    padding: '0.75rem 1rem',
-                    borderRadius: 'var(--radius-md)',
-                    color: link.isPill ? 'var(--accent-primary)' : 'var(--text-primary)',
-                    backgroundColor: link.isPill ? 'var(--accent-light)' : 'transparent',
-                    fontWeight: 600,
-                    fontSize: '1rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                  }}
-                >
-                  <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    {link.isPill && <Smartphone size={16} />}
-                    {link.label}
-                  </span>
-                  <ArrowUpRight size={16} style={{ opacity: 0.5 }} />
-                </a>
-              ))}
-            </div>
-
-            <div
+            <motion.div
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -20, opacity: 0 }}
+              transition={{ type: 'spring', stiffness: 120, damping: 20 }}
               style={{
-                marginTop: '1rem',
-                paddingTop: '1rem',
-                borderTop: '1px solid var(--border-subtle)',
+                backgroundColor: '#FFFFFF',
+                padding: '1.5rem',
+                borderBottom: '1px solid var(--border-light)',
+                boxShadow: '0 20px 40px -10px rgba(15, 23, 42, 0.15)',
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '0.75rem',
               }}
+              onClick={(e) => e.stopPropagation()}
             >
-              <a
-                href={PERSONAL_INFO.resumePath}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-secondary"
-                style={{ width: '100%' }}
-                onClick={() => setMobileMenuOpen(false)}
+              {/* Active Role Tag in Mobile Drawer */}
+              <div
+                style={{
+                  padding: '0.65rem 1rem',
+                  backgroundColor: 'var(--bg-elevated)',
+                  borderRadius: '12px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  fontSize: '0.8rem',
+                  color: 'var(--accent-primary)',
+                  fontWeight: 600,
+                }}
               >
-                <FileText size={16} />
-                Download Resume (PDF)
-              </a>
-              <a
-                href="#contact"
-                className="btn btn-primary"
-                style={{ width: '100%' }}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <Send size={16} />
-                Get in Touch
-              </a>
-            </div>
-          </div>
-        </div>
-      )}
+                <Building2 size={15} />
+                <span>Mobile App Dev @ Textural Art Solutions</span>
+              </div>
 
-      {/* Media Query Helpers in CSS */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+                {navLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    style={{
+                      padding: '0.85rem 1rem',
+                      borderRadius: '12px',
+                      color: link.isPill ? 'var(--accent-primary)' : 'var(--text-primary)',
+                      backgroundColor: link.isPill ? 'var(--accent-light)' : 'transparent',
+                      fontWeight: 700,
+                      fontSize: '1rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                    }}
+                  >
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      {link.isPill && <Smartphone size={16} />}
+                      {link.label}
+                    </span>
+                    <ArrowUpRight size={16} style={{ opacity: 0.5 }} />
+                  </a>
+                ))}
+              </div>
+
+              <div
+                style={{
+                  marginTop: '0.75rem',
+                  paddingTop: '1rem',
+                  borderTop: '1px solid var(--border-subtle)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '0.75rem',
+                }}
+              >
+                <a
+                  href={PERSONAL_INFO.resumePath}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary btn-lg"
+                  style={{ width: '100%' }}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <FileText size={18} />
+                  Download Resume (PDF)
+                </a>
+                <a
+                  href="#contact"
+                  className="btn btn-primary btn-lg"
+                  style={{ width: '100%' }}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Send size={18} />
+                  Get in Touch
+                </a>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <style>{`
         @media (min-width: 900px) {
           .desktop-nav { display: flex !important; }

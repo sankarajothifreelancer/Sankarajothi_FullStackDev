@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import {
   ArrowRight,
@@ -6,12 +7,10 @@ import {
   Mail,
   Smartphone,
   Layers,
-  Database,
   CheckCircle2,
-  ExternalLink,
   Code2,
-  Cpu,
   Sparkles,
+  Building2,
 } from 'lucide-react';
 
 export const Hero: React.FC = () => {
@@ -20,19 +19,36 @@ export const Hero: React.FC = () => {
   const verifiedTechs = [
     { name: 'React Native', category: 'Mobile' },
     { name: 'Expo & EAS', category: 'Mobile' },
+    { name: 'Supabase', category: 'Backend & DB' },
     { name: 'React.js', category: 'Frontend' },
     { name: 'TypeScript', category: 'Language' },
-    { name: 'Supabase', category: 'Backend / DB' },
     { name: 'Node.js & Express', category: 'Backend' },
     { name: 'MongoDB', category: 'Database' },
     { name: 'Google Play Console', category: 'Release' },
   ];
 
   return (
-    <section id="home" className="section" style={{ paddingTop: '2.5rem', paddingBottom: '4.5rem' }}>
+    <section
+      id="home"
+      style={{
+        minHeight: 'calc(100dvh - 74px)',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        paddingTop: '2.5rem',
+        paddingBottom: '4.5rem',
+        position: 'relative',
+        overflow: 'hidden',
+      }}
+    >
       <div className="container">
-        {/* Top Availability Pill */}
-        <div style={{ display: 'flex', justifyContent: 'flex-start', marginBottom: '1.25rem' }}>
+        {/* Top Floating Pill: Active Role at Textural Art Solutions */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          style={{ display: 'flex', justifyContent: 'flex-start', marginBottom: '1.25rem' }}
+        >
           <div
             style={{
               display: 'inline-flex',
@@ -40,36 +56,46 @@ export const Hero: React.FC = () => {
               gap: '0.65rem',
               backgroundColor: '#FFFFFF',
               border: '1px solid var(--border-light)',
-              padding: '0.45rem 1rem',
+              padding: '0.45rem 1.15rem',
               borderRadius: 'var(--radius-full)',
-              boxShadow: 'var(--shadow-sm)',
+              boxShadow: '0 4px 14px 0 rgba(15, 23, 42, 0.04)',
+              flexWrap: 'wrap',
             }}
           >
-            <span className="status-pulse-dot" />
-            <span
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <span className="status-pulse-dot" />
+              <span
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '0.85rem',
+                  fontWeight: 700,
+                  color: 'var(--text-primary)',
+                  letterSpacing: '-0.01em',
+                }}
+              >
+                Mobile Application Developer
+              </span>
+            </div>
+
+            <div
               style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: '0.85rem',
-                fontWeight: 600,
-                color: 'var(--text-primary)',
-              }}
-            >
-              Available for Full Stack & Mobile Roles
-            </span>
-            <span
-              style={{
-                fontSize: '0.75rem',
-                color: 'var(--text-muted)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.45rem',
                 borderLeft: '1px solid var(--border-light)',
                 paddingLeft: '0.65rem',
+                fontSize: '0.8rem',
+                color: 'var(--accent-primary)',
+                fontWeight: 600,
               }}
             >
-              Remote / On-site
-            </span>
+              <Building2 size={14} />
+              <span>Textural Art Solutions (Current)</span>
+            </div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Main Hero Grid */}
+        {/* Hero Grid */}
         <div
           style={{
             display: 'grid',
@@ -79,13 +105,18 @@ export const Hero: React.FC = () => {
           }}
           className="hero-grid"
         >
-          {/* Left Column: Headline, Bio & Action Buttons */}
-          <div>
+          {/* Left Column: Heading, Context & Action Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          >
             <h1
               style={{
                 marginBottom: '1.25rem',
                 color: 'var(--text-primary)',
-                lineHeight: 1.12,
+                lineHeight: 1.1,
+                letterSpacing: '-0.035em',
               }}
             >
               Building Digital Products That{' '}
@@ -102,22 +133,23 @@ export const Hero: React.FC = () => {
 
             <p
               style={{
-                fontSize: '1.2rem',
+                fontSize: '1.18rem',
                 color: 'var(--text-secondary)',
-                lineHeight: 1.6,
+                lineHeight: 1.65,
                 marginBottom: '2rem',
-                maxWidth: '600px',
+                maxWidth: '580px',
               }}
             >
-              I'm a{' '}
-              <strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>
-                Full Stack & Mobile Application Developer
+              I am a{' '}
+              <strong style={{ color: 'var(--text-primary)', fontWeight: 700 }}>
+                Mobile Application &amp; Full Stack Developer
               </strong>{' '}
-              focused on building reliable web applications, mobile experiences, and practical digital solutions.
-              Experienced with React Native, Supabase, React.js, and 10+ freelance client deliveries.
+              currently engineering cross-platform products at{' '}
+              <strong style={{ color: 'var(--accent-primary)', fontWeight: 700 }}>Textural Art Solutions</strong>.
+              Developer of <strong>Counter 365</strong> (retail POS on Google Play) and <strong>StyleFleet</strong> (salon management platform), alongside 10+ independent client deliverables.
             </p>
 
-            {/* Action Buttons */}
+            {/* Action Buttons with Spring Feedback */}
             <div
               style={{
                 display: 'flex',
@@ -126,12 +158,20 @@ export const Hero: React.FC = () => {
                 marginBottom: '2.5rem',
               }}
             >
-              <a href="#projects" className="btn btn-primary btn-lg">
-                Explore My Work
+              <motion.a
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                href="#mobile-apps"
+                className="btn btn-primary btn-lg"
+              >
+                <Smartphone size={18} />
+                Explore Mobile Apps
                 <ArrowRight size={18} />
-              </a>
+              </motion.a>
 
-              <a
+              <motion.a
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 href={PERSONAL_INFO.resumePath}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -139,15 +179,20 @@ export const Hero: React.FC = () => {
               >
                 <FileText size={18} />
                 Download Resume
-              </a>
+              </motion.a>
 
-              <a href="#contact" className="btn btn-ghost btn-lg">
+              <motion.a
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                href="#contact"
+                className="btn btn-ghost btn-lg"
+              >
                 <Mail size={18} />
                 Contact Me
-              </a>
+              </motion.a>
             </div>
 
-            {/* Quick Stat Highlights */}
+            {/* Credibility Stats Strip */}
             <div
               style={{
                 display: 'grid',
@@ -161,9 +206,26 @@ export const Hero: React.FC = () => {
                 <div
                   style={{
                     fontFamily: 'var(--font-display)',
-                    fontSize: '1.75rem',
+                    fontSize: '1.85rem',
                     fontWeight: 800,
                     color: 'var(--text-primary)',
+                    lineHeight: 1,
+                  }}
+                >
+                  2 Apps
+                </div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
+                  Textural Art Solutions
+                </div>
+              </div>
+
+              <div>
+                <div
+                  style={{
+                    fontFamily: 'var(--font-display)',
+                    fontSize: '1.85rem',
+                    fontWeight: 800,
+                    color: 'var(--accent-primary)',
                     lineHeight: 1,
                   }}
                 >
@@ -178,24 +240,7 @@ export const Hero: React.FC = () => {
                 <div
                   style={{
                     fontFamily: 'var(--font-display)',
-                    fontSize: '1.75rem',
-                    fontWeight: 800,
-                    color: 'var(--accent-primary)',
-                    lineHeight: 1,
-                  }}
-                >
-                  2
-                </div>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
-                  Production Mobile Apps
-                </div>
-              </div>
-
-              <div>
-                <div
-                  style={{
-                    fontFamily: 'var(--font-display)',
-                    fontSize: '1.75rem',
+                    fontSize: '1.85rem',
                     fontWeight: 800,
                     color: 'var(--text-primary)',
                     lineHeight: 1,
@@ -204,25 +249,31 @@ export const Hero: React.FC = () => {
                   8.5
                 </div>
                 <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
-                  B.Tech CGPA (AI & DS)
+                  B.Tech CGPA (AI &amp; DS)
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Right Column: Interactive Software Preview Canvas */}
-          <div>
+          {/* Right Column: Interactive Bento Preview with Perpetual Motion */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          >
             <div
-              className="card-base"
               style={{
-                padding: '1.25rem',
-                boxShadow: 'var(--shadow-lg)',
+                padding: '1.5rem',
+                borderRadius: '24px',
                 backgroundColor: '#FFFFFF',
-                borderRadius: 'var(--radius-xl)',
                 border: '1px solid var(--border-light)',
+                boxShadow: '0 20px 40px -15px rgba(15, 23, 42, 0.06)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem',
               }}
             >
-              {/* Preview Window Header & Tab Selector */}
+              {/* Header Bar with Architecture State Switcher */}
               <div
                 style={{
                   display: 'flex',
@@ -230,7 +281,6 @@ export const Hero: React.FC = () => {
                   justifyContent: 'space-between',
                   paddingBottom: '0.85rem',
                   borderBottom: '1px solid var(--border-subtle)',
-                  marginBottom: '1rem',
                   flexWrap: 'wrap',
                   gap: '0.5rem',
                 }}
@@ -244,36 +294,36 @@ export const Hero: React.FC = () => {
                   <span
                     style={{
                       fontFamily: 'var(--font-mono)',
-                      fontSize: '0.75rem',
+                      fontSize: '0.78rem',
                       color: 'var(--text-muted)',
-                      fontWeight: 500,
-                      marginLeft: '0.25rem',
+                      fontWeight: 600,
                     }}
                   >
-                    architecture-overview.ts
+                    textural-art-solutions.ts
                   </span>
                 </div>
 
-                {/* Tab Switcher */}
+                {/* Tab Pill Buttons */}
                 <div
                   style={{
                     display: 'flex',
                     backgroundColor: 'var(--bg-elevated)',
                     padding: '3px',
-                    borderRadius: 'var(--radius-md)',
+                    borderRadius: 'var(--radius-full)',
                     gap: '2px',
                   }}
                 >
                   <button
                     onClick={() => setActivePreviewTab('mobile')}
                     style={{
-                      padding: '0.35rem 0.65rem',
-                      borderRadius: 'var(--radius-sm)',
+                      padding: '0.35rem 0.75rem',
+                      borderRadius: 'var(--radius-full)',
                       fontSize: '0.75rem',
                       fontWeight: 600,
                       backgroundColor: activePreviewTab === 'mobile' ? '#FFFFFF' : 'transparent',
                       color: activePreviewTab === 'mobile' ? 'var(--text-primary)' : 'var(--text-muted)',
                       boxShadow: activePreviewTab === 'mobile' ? 'var(--shadow-sm)' : 'none',
+                      transition: 'all 200ms ease',
                       display: 'flex',
                       alignItems: 'center',
                       gap: '0.35rem',
@@ -286,13 +336,14 @@ export const Hero: React.FC = () => {
                   <button
                     onClick={() => setActivePreviewTab('fullstack')}
                     style={{
-                      padding: '0.35rem 0.65rem',
-                      borderRadius: 'var(--radius-sm)',
+                      padding: '0.35rem 0.75rem',
+                      borderRadius: 'var(--radius-full)',
                       fontSize: '0.75rem',
                       fontWeight: 600,
                       backgroundColor: activePreviewTab === 'fullstack' ? '#FFFFFF' : 'transparent',
                       color: activePreviewTab === 'fullstack' ? 'var(--text-primary)' : 'var(--text-muted)',
                       boxShadow: activePreviewTab === 'fullstack' ? 'var(--shadow-sm)' : 'none',
+                      transition: 'all 200ms ease',
                       display: 'flex',
                       alignItems: 'center',
                       gap: '0.35rem',
@@ -305,13 +356,14 @@ export const Hero: React.FC = () => {
                   <button
                     onClick={() => setActivePreviewTab('metrics')}
                     style={{
-                      padding: '0.35rem 0.65rem',
-                      borderRadius: 'var(--radius-sm)',
+                      padding: '0.35rem 0.75rem',
+                      borderRadius: 'var(--radius-full)',
                       fontSize: '0.75rem',
                       fontWeight: 600,
                       backgroundColor: activePreviewTab === 'metrics' ? '#FFFFFF' : 'transparent',
                       color: activePreviewTab === 'metrics' ? 'var(--text-primary)' : 'var(--text-muted)',
                       boxShadow: activePreviewTab === 'metrics' ? 'var(--shadow-sm)' : 'none',
+                      transition: 'all 200ms ease',
                       display: 'flex',
                       alignItems: 'center',
                       gap: '0.35rem',
@@ -323,188 +375,195 @@ export const Hero: React.FC = () => {
                 </div>
               </div>
 
-              {/* Tab 1: Mobile Architecture */}
-              {activePreviewTab === 'mobile' && (
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
-                  <div
-                    style={{
-                      backgroundColor: 'var(--bg-elevated)',
-                      padding: '1rem',
-                      borderRadius: 'var(--radius-md)',
-                      border: '1px solid var(--border-subtle)',
-                    }}
+              {/* Dynamic Tab Content with Animation */}
+              <AnimatePresence mode="wait">
+                {activePreviewTab === 'mobile' && (
+                  <motion.div
+                    key="mobile-preview"
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.25 }}
+                    style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}
                   >
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        <Smartphone size={18} style={{ color: 'var(--accent-primary)' }} />
-                        <span style={{ fontWeight: 700, fontSize: '0.95rem', color: 'var(--text-primary)' }}>
-                          Counter 365 (Point-of-Sale)
-                        </span>
+                    {/* App 1: Counter 365 */}
+                    <div
+                      style={{
+                        padding: '1rem 1.25rem',
+                        backgroundColor: 'var(--bg-elevated)',
+                        borderRadius: '16px',
+                        border: '1px solid var(--border-subtle)',
+                      }}
+                    >
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                          <Smartphone size={17} style={{ color: 'var(--accent-primary)' }} />
+                          <span style={{ fontWeight: 700, fontSize: '0.98rem', color: 'var(--text-primary)' }}>
+                            Counter 365
+                          </span>
+                        </div>
+                        <span className="badge badge-indigo">Google Play Store</span>
                       </div>
-                      <span className="badge badge-indigo">Google Play Store</span>
-                    </div>
-                    <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>
-                      Retail mobile POS checkout, inventory catalog virtualization, customer/vendor contact directory, and automated WhatsApp billing receipt generation.
-                    </p>
-                    <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
-                      <span className="badge badge-neutral">React Native</span>
-                      <span className="badge badge-neutral">Expo</span>
-                      <span className="badge badge-neutral">Supabase</span>
-                      <span className="badge badge-neutral">EAS Build</span>
-                    </div>
-                  </div>
-
-                  <div
-                    style={{
-                      backgroundColor: 'var(--bg-elevated)',
-                      padding: '1rem',
-                      borderRadius: 'var(--radius-md)',
-                      border: '1px solid var(--border-subtle)',
-                    }}
-                  >
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        <Smartphone size={18} style={{ color: 'var(--accent-blue)' }} />
-                        <span style={{ fontWeight: 700, fontSize: '0.95rem', color: 'var(--text-primary)' }}>
-                          StyleFleet (Salon Operations)
-                        </span>
-                      </div>
-                      <span className="badge badge-teal">Cross-Platform</span>
-                    </div>
-                    <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>
-                      Real-time appointment calendar booking, staff allocation, service catalogs, and live sync with the Royal Cuts &amp; Spa web dashboard.
-                    </p>
-                    <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
-                      <span className="badge badge-neutral">React Native</span>
-                      <span className="badge badge-neutral">Expo</span>
-                      <span className="badge badge-neutral">Supabase Realtime</span>
-                      <span className="badge badge-neutral">Web Dashboard</span>
-                    </div>
-                  </div>
-
-                  <a
-                    href="#mobile-apps"
-                    style={{
-                      fontSize: '0.85rem',
-                      fontWeight: 600,
-                      color: 'var(--accent-primary)',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '0.35rem',
-                      padding: '0.25rem 0',
-                    }}
-                  >
-                    View detailed mobile engineering case studies
-                    <ArrowRight size={14} />
-                  </a>
-                </div>
-              )}
-
-              {/* Tab 2: Full-Stack Pipeline */}
-              {activePreviewTab === 'fullstack' && (
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                  <div
-                    style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: '0.78rem',
-                      backgroundColor: '#0F172A',
-                      color: '#E2E8F0',
-                      padding: '1rem',
-                      borderRadius: 'var(--radius-md)',
-                      lineHeight: 1.7,
-                      overflowX: 'auto',
-                    }}
-                  >
-                    <div><span style={{ color: '#818CF8' }}>const</span> deploymentPipeline = &#123;</div>
-                    <div style={{ paddingLeft: '1.25rem' }}>frontend: <span style={{ color: '#34D399' }}>'React.js + Tailwind CSS (Vercel/Netlify)'</span>,</div>
-                    <div style={{ paddingLeft: '1.25rem' }}>backend: <span style={{ color: '#34D399' }}>'Node.js + Express.js REST APIs'</span>,</div>
-                    <div style={{ paddingLeft: '1.25rem' }}>database: <span style={{ color: '#34D399' }}>'Supabase (PostgreSQL) / MongoDB Atlas'</span>,</div>
-                    <div style={{ paddingLeft: '1.25rem' }}>auth: <span style={{ color: '#FCD34D' }}>['JWT Tokens', 'Supabase Auth', 'Role RBAC']</span>,</div>
-                    <div style={{ paddingLeft: '1.25rem' }}>status: <span style={{ color: '#60A5FA' }}>'10+ Production Deployments Active'</span></div>
-                    <div>&#125;;</div>
-                  </div>
-
-                  <div
-                    style={{
-                      display: 'grid',
-                      gridTemplateColumns: 'repeat(2, 1fr)',
-                      gap: '0.65rem',
-                    }}
-                  >
-                    <div style={{ padding: '0.75rem', background: 'var(--bg-elevated)', borderRadius: 'var(--radius-sm)' }}>
-                      <div style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)' }}>CLIENT PLATFORMS</div>
-                      <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)', marginTop: '2px' }}>
-                        Enterprise, Healthcare, BPO
-                      </div>
-                    </div>
-                    <div style={{ padding: '0.75rem', background: 'var(--bg-elevated)', borderRadius: 'var(--radius-sm)' }}>
-                      <div style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)' }}>CUSTOM DOMAINS</div>
-                      <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)', marginTop: '2px' }}>
-                        DNS, SSL &amp; Live Handover
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Tab 3: Delivery Metrics */}
-              {activePreviewTab === 'metrics' && (
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                  <div
-                    style={{
-                      display: 'grid',
-                      gridTemplateColumns: '1fr 1fr',
-                      gap: '0.75rem',
-                    }}
-                  >
-                    <div style={{ padding: '1rem', background: 'var(--bg-elevated)', borderRadius: 'var(--radius-md)' }}>
-                      <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--text-primary)', fontFamily: 'var(--font-display)' }}>
-                        10+
-                      </div>
-                      <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-primary)', marginTop: '4px' }}>
-                        Client Websites
-                      </div>
-                      <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-                        Delivered independently end-to-end
+                      <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '0.65rem' }}>
+                        Mobile point-of-sale: touch checkout, virtualized retail item catalog, WhatsApp billing dispatch &amp; supervisor security.
+                      </p>
+                      <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
+                        <span className="badge badge-neutral">React Native</span>
+                        <span className="badge badge-neutral">Expo &amp; EAS</span>
+                        <span className="badge badge-neutral">Supabase</span>
                       </div>
                     </div>
 
-                    <div style={{ padding: '1rem', background: 'var(--bg-elevated)', borderRadius: 'var(--radius-md)' }}>
-                      <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--accent-primary)', fontFamily: 'var(--font-display)' }}>
-                        2 Apps
+                    {/* App 2: StyleFleet */}
+                    <div
+                      style={{
+                        padding: '1rem 1.25rem',
+                        backgroundColor: 'var(--bg-elevated)',
+                        borderRadius: '16px',
+                        border: '1px solid var(--border-subtle)',
+                      }}
+                    >
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                          <Smartphone size={17} style={{ color: 'var(--accent-blue)' }} />
+                          <span style={{ fontWeight: 700, fontSize: '0.98rem', color: 'var(--text-primary)' }}>
+                            StyleFleet
+                          </span>
+                        </div>
+                        <span className="badge badge-teal">Cross-Platform</span>
                       </div>
-                      <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-primary)', marginTop: '4px' }}>
-                        Production Mobile
-                      </div>
-                      <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-                        Google Play Store &amp; cross-platform
+                      <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '0.65rem' }}>
+                        Salon &amp; spa platform: real-time appointment scheduling, stylist allocation, and synchronized web dashboard.
+                      </p>
+                      <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
+                        <span className="badge badge-neutral">React Native</span>
+                        <span className="badge badge-neutral">Supabase Realtime</span>
+                        <span className="badge badge-neutral">Web Dashboard</span>
                       </div>
                     </div>
-                  </div>
 
-                  <div
-                    style={{
-                      padding: '0.85rem 1rem',
-                      background: '#F0FDF4',
-                      border: '1px solid #DCFCE7',
-                      borderRadius: 'var(--radius-md)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.65rem',
-                    }}
+                    <a
+                      href="#mobile-apps"
+                      style={{
+                        fontSize: '0.85rem',
+                        fontWeight: 700,
+                        color: 'var(--accent-primary)',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '0.4rem',
+                        padding: '0.25rem 0',
+                      }}
+                    >
+                      Explore live mobile engineering breakdown &amp; slides
+                      <ArrowRight size={14} />
+                    </a>
+                  </motion.div>
+                )}
+
+                {activePreviewTab === 'fullstack' && (
+                  <motion.div
+                    key="fullstack-preview"
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.25 }}
+                    style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}
                   >
-                    <CheckCircle2 size={18} style={{ color: '#16A34A', flexShrink: 0 }} />
-                    <span style={{ fontSize: '0.82rem', color: '#15803D', fontWeight: 500 }}>
-                      All showcase projects link directly to verified live domains with zero placeholder data.
-                    </span>
-                  </div>
-                </div>
-              )}
+                    <div
+                      style={{
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: '0.78rem',
+                        backgroundColor: '#0F172A',
+                        color: '#E2E8F0',
+                        padding: '1.1rem',
+                        borderRadius: '16px',
+                        lineHeight: 1.7,
+                      }}
+                    >
+                      <div><span style={{ color: '#818CF8' }}>const</span> activeArchitecture = &#123;</div>
+                      <div style={{ paddingLeft: '1.25rem' }}>company: <span style={{ color: '#34D399' }}>'Textural Art Solutions'</span>,</div>
+                      <div style={{ paddingLeft: '1.25rem' }}>mobileApps: [<span style={{ color: '#60A5FA' }}>'Counter 365'</span>, <span style={{ color: '#60A5FA' }}>'StyleFleet'</span>],</div>
+                      <div style={{ paddingLeft: '1.25rem' }}>stack: <span style={{ color: '#FCD34D' }}>['React Native', 'Expo', 'Supabase', 'Node.js']</span>,</div>
+                      <div style={{ paddingLeft: '1.25rem' }}>freelanceDeployments: <span style={{ color: '#F472B6' }}>'10+ verified live clients'</span></div>
+                      <div>&#125;;</div>
+                    </div>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.65rem' }}>
+                      <div style={{ padding: '0.75rem', background: 'var(--bg-elevated)', borderRadius: '12px' }}>
+                        <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-muted)' }}>BACKEND SYNC</div>
+                        <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-primary)', marginTop: '2px' }}>
+                          Supabase Realtime
+                        </div>
+                      </div>
+                      <div style={{ padding: '0.75rem', background: 'var(--bg-elevated)', borderRadius: '12px' }}>
+                        <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-muted)' }}>DISTRIBUTION</div>
+                        <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-primary)', marginTop: '2px' }}>
+                          EAS &amp; Play Console
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+
+                {activePreviewTab === 'metrics' && (
+                  <motion.div
+                    key="metrics-preview"
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.25 }}
+                    style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}
+                  >
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+                      <div style={{ padding: '1rem', background: 'var(--bg-elevated)', borderRadius: '16px' }}>
+                        <div style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--accent-primary)', fontFamily: 'var(--font-display)' }}>
+                          10+
+                        </div>
+                        <div style={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--text-primary)', marginTop: '4px' }}>
+                          Client Deliveries
+                        </div>
+                        <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
+                          100% active live websites
+                        </div>
+                      </div>
+
+                      <div style={{ padding: '1rem', background: 'var(--bg-elevated)', borderRadius: '16px' }}>
+                        <div style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--text-primary)', fontFamily: 'var(--font-display)' }}>
+                          2 Apps
+                        </div>
+                        <div style={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--text-primary)', marginTop: '4px' }}>
+                          Textural Art Solutions
+                        </div>
+                        <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
+                          Published on Google Play Store
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      style={{
+                        padding: '0.85rem 1rem',
+                        background: '#F0FDF4',
+                        border: '1px solid #DCFCE7',
+                        borderRadius: '14px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.65rem',
+                      }}
+                    >
+                      <CheckCircle2 size={18} style={{ color: '#16A34A', flexShrink: 0 }} />
+                      <span style={{ fontSize: '0.82rem', color: '#15803D', fontWeight: 600 }}>
+                        Every project features verified live demo links and transparent client attributions.
+                      </span>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
-          </div>
+          </motion.div>
         </div>
 
-        {/* Compact Technology Strip */}
+        {/* Verified Technology Strip */}
         <div
           style={{
             marginTop: '3.5rem',
@@ -514,7 +573,7 @@ export const Hero: React.FC = () => {
         >
           <div
             style={{
-              fontSize: '0.8rem',
+              fontSize: '0.78rem',
               fontWeight: 700,
               textTransform: 'uppercase',
               letterSpacing: '0.08em',
@@ -526,7 +585,7 @@ export const Hero: React.FC = () => {
             }}
           >
             <Code2 size={15} />
-            Verified Core Technology Stack
+            Verified Technical Stack Applied in Production
           </div>
 
           <div
@@ -538,20 +597,22 @@ export const Hero: React.FC = () => {
             }}
           >
             {verifiedTechs.map((tech) => (
-              <div
+              <motion.div
                 key={tech.name}
+                whileHover={{ y: -2, boxShadow: '0 6px 16px -2px rgba(15, 23, 42, 0.08)' }}
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '0.5rem',
                   backgroundColor: '#FFFFFF',
                   border: '1px solid var(--border-light)',
-                  padding: '0.4rem 0.85rem',
+                  padding: '0.45rem 0.95rem',
                   borderRadius: 'var(--radius-md)',
                   boxShadow: 'var(--shadow-sm)',
                   fontSize: '0.85rem',
                   fontWeight: 600,
                   color: 'var(--text-primary)',
+                  transition: 'all 150ms ease',
                 }}
               >
                 <span>{tech.name}</span>
@@ -566,7 +627,7 @@ export const Hero: React.FC = () => {
                 >
                   {tech.category}
                 </span>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
