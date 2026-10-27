@@ -50,11 +50,11 @@ export const FreelanceSection: React.FC = () => {
         <div className="section-header">
           <div className="section-eyebrow">
             <Briefcase size={14} />
-            Independent Client Practice
+            Prior Freelance Practice (Jul 2025 – Aug 2026)
           </div>
           <h2 className="section-title">From Client Requirements to Real Digital Products</h2>
           <p className="section-description">
-            For over a year, I have operated as an independent software developer delivering 10+ custom client websites, portals, and e-commerce systems with end-to-end responsibility.
+            Prior to joining <strong>Tecstellar Solutions</strong> in August 2026, I operated as an independent software developer for over a year (<strong>July 2025 – August 2026</strong>), delivering 10+ custom client websites, portals, and e-commerce systems with end-to-end responsibility and 100% verified production uptime.
           </p>
         </div>
 

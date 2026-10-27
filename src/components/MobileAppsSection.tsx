@@ -8,8 +8,11 @@ import {
   ChevronRight,
   ShieldCheck,
   Building2,
-  Calendar,
   ExternalLink,
+  Layers,
+  Sparkles,
+  ArrowRight,
+  Code2,
 } from 'lucide-react';
 
 export const MobileAppsSection: React.FC = () => {
@@ -33,6 +36,11 @@ export const MobileAppsSection: React.FC = () => {
     }
   };
 
+  const currentScreenshot =
+    selectedApp.screenshots && selectedApp.screenshots[activeSlideIndex]
+      ? selectedApp.screenshots[activeSlideIndex]
+      : { url: selectedApp.heroImage, caption: selectedApp.name };
+
   return (
     <section
       id="mobile-apps"
@@ -48,15 +56,15 @@ export const MobileAppsSection: React.FC = () => {
         <div className="section-header">
           <div className="section-eyebrow">
             <Smartphone size={14} />
-            Mobile Engineering Showcase
+            Mobile Engineering Flagship
           </div>
           <h2 className="section-title">Production Mobile Applications</h2>
           <p className="section-description">
-            Published cross-platform applications built at <strong>Tecstellar Solutions</strong> (my current professional role as Mobile Application Developer), powering retail POS checkout and salon business ecosystems.
+            Production-grade cross-platform mobile apps built <strong>from scratch for both Android and iOS</strong> using React Native, Expo, and Supabase at <strong>Tecstellar Solutions</strong> (my current professional role).
           </p>
         </div>
 
-        {/* Current Employment Context Banner */}
+        {/* Current Employment & Architecture Banner */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -72,42 +80,52 @@ export const MobileAppsSection: React.FC = () => {
             alignItems: 'center',
             justifyContent: 'space-between',
             flexWrap: 'wrap',
-            gap: '1rem',
+            gap: '1.25rem',
             boxShadow: '0 4px 20px -2px rgba(15, 23, 42, 0.03)',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.95rem' }}>
             <div
               style={{
-                width: '42px',
-                height: '42px',
-                borderRadius: '12px',
+                width: '46px',
+                height: '46px',
+                borderRadius: '14px',
                 backgroundColor: '#FFFFFF',
                 color: 'var(--accent-primary)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.06)',
+                boxShadow: '0 2px 10px rgba(0, 0, 0, 0.06)',
                 flexShrink: 0,
               }}
             >
-              <Building2 size={22} />
+              <Building2 size={24} />
             </div>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-                <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.05rem', color: 'var(--text-headline)' }}>
+                <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.1rem', color: 'var(--text-headline)' }}>
                   Tecstellar Solutions
                 </span>
-                <span className="badge badge-teal">Active Employment</span>
+                <span className="badge badge-teal">Current Employment</span>
+                <span className="badge badge-indigo">Built from Scratch</span>
               </div>
-              <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                <strong>Role:</strong> Mobile Application Developer • Aug 2026 – Present
+              <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginTop: '0.15rem' }}>
+                <strong>Role:</strong> Mobile Application Developer • Aug 2026 – Present • React Native (Android &amp; iOS)
               </div>
             </div>
           </div>
 
-          <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', maxWidth: '440px', lineHeight: 1.5 }}>
-            Both applications below (<strong>Counter 365</strong> &amp; <strong>StyleFleet</strong>) are production mobile apps I personally contributed to and published on the Google Play Store.
+          <div
+            style={{
+              fontSize: '0.86rem',
+              color: 'var(--text-secondary)',
+              maxWidth: '460px',
+              lineHeight: 1.5,
+              borderLeft: '2px solid rgba(79, 70, 229, 0.25)',
+              paddingLeft: '1rem',
+            }}
+          >
+            I architected and built <strong>Counter 365</strong> and <strong>StyleFleet</strong> from blank canvas to production stores for both <strong>Android and iOS</strong>, managing state, native device modules, and Google Play Console distribution.
           </div>
         </motion.div>
 
@@ -134,8 +152,8 @@ export const MobileAppsSection: React.FC = () => {
                 style={{
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '0.85rem',
-                  padding: '1.1rem 1.75rem',
+                  gap: '1rem',
+                  padding: '1.15rem 1.75rem',
                   borderRadius: '24px',
                   backgroundColor: isSelected ? 'var(--text-headline)' : '#FFFFFF',
                   color: isSelected ? '#FFFFFF' : 'var(--text-headline)',
@@ -144,33 +162,56 @@ export const MobileAppsSection: React.FC = () => {
                   transition: 'all 200ms ease',
                   cursor: 'pointer',
                   textAlign: 'left',
-                  flex: '1 1 280px',
+                  flex: '1 1 300px',
                 }}
               >
                 <div
                   style={{
-                    width: '42px',
-                    height: '42px',
+                    width: '46px',
+                    height: '46px',
                     borderRadius: '12px',
-                    backgroundColor: isSelected ? 'rgba(255, 255, 255, 0.18)' : 'var(--accent-soft)',
-                    color: isSelected ? '#FFFFFF' : 'var(--accent-primary)',
+                    overflow: 'hidden',
+                    backgroundColor: isSelected ? 'rgba(255, 255, 255, 0.15)' : '#F4F4F5',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    fontWeight: 800,
                     flexShrink: 0,
+                    border: '1px solid rgba(0, 0, 0, 0.08)',
                   }}
                 >
-                  <Smartphone size={22} />
+                  {app.iconImage ? (
+                    <img
+                      src={app.iconImage}
+                      alt={`${app.name} icon`}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                  ) : (
+                    <Smartphone size={24} color={isSelected ? '#FFFFFF' : 'var(--accent-primary)'} />
+                  )}
                 </div>
                 <div>
-                  <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.2rem', letterSpacing: '-0.02em' }}>
-                    {app.name}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', flexWrap: 'wrap' }}>
+                    <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.25rem', letterSpacing: '-0.02em' }}>
+                      {app.name}
+                    </span>
+                    <span
+                      style={{
+                        fontSize: '0.7rem',
+                        fontWeight: 700,
+                        padding: '0.15rem 0.5rem',
+                        borderRadius: '9999px',
+                        backgroundColor: isSelected ? 'rgba(255, 255, 255, 0.2)' : 'rgba(5, 150, 105, 0.12)',
+                        color: isSelected ? '#FFFFFF' : '#059669',
+                      }}
+                    >
+                      Android &amp; iOS
+                    </span>
                   </div>
                   <div
                     style={{
                       fontSize: '0.8rem',
                       color: isSelected ? 'rgba(255, 255, 255, 0.8)' : 'var(--text-secondary)',
+                      marginTop: '0.2rem',
                     }}
                   >
                     Tecstellar Solutions • {app.statusBadge}
@@ -207,7 +248,7 @@ export const MobileAppsSection: React.FC = () => {
                 gap: '1.5rem',
                 paddingBottom: '2rem',
                 borderBottom: '1px solid rgba(0, 0, 0, 0.08)',
-                marginBottom: '2rem',
+                marginBottom: '2.5rem',
               }}
             >
               <div>
@@ -218,6 +259,9 @@ export const MobileAppsSection: React.FC = () => {
                   <span className="badge badge-teal">
                     <ShieldCheck size={13} />
                     {selectedApp.statusBadge}
+                  </span>
+                  <span className="badge badge-indigo">
+                    Built from Scratch (Android &amp; iOS)
                   </span>
                   {selectedApp.internalOrAltName && (
                     <span className="badge badge-neutral">
@@ -241,9 +285,10 @@ export const MobileAppsSection: React.FC = () => {
                   className="btn btn-primary"
                   style={{
                     backgroundColor: '#09090B',
-                    padding: '0.75rem 1.45rem',
+                    padding: '0.8rem 1.6rem',
                     borderRadius: '9999px',
-                    gap: '0.5rem',
+                    gap: '0.55rem',
+                    boxShadow: '0 8px 20px -4px rgba(0, 0, 0, 0.25)',
                   }}
                 >
                   <ExternalLink size={16} />
@@ -252,7 +297,7 @@ export const MobileAppsSection: React.FC = () => {
               )}
             </div>
 
-            {/* Split Grid: Left Device Visuals & Official Play Store Showcase, Right Technical Deep-Dive */}
+            {/* Split Grid: Left Device Visuals & Play Store Showcase, Right Technical Deep-Dive */}
             <div
               style={{
                 display: 'grid',
@@ -261,9 +306,9 @@ export const MobileAppsSection: React.FC = () => {
                 alignItems: 'flex-start',
               }}
             >
-              {/* Left Column: Official Store Showcase & Slides */}
+              {/* Left Column: Photorealistic Phone Frame Carousel + Store Banner */}
               <div>
-                <div style={{ marginBottom: '1.25rem' }}>
+                <div style={{ marginBottom: '1.25rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
                   <span
                     style={{
                       fontSize: '0.75rem',
@@ -273,24 +318,127 @@ export const MobileAppsSection: React.FC = () => {
                       color: 'var(--text-tertiary)',
                     }}
                   >
-                    Official Store Assets &amp; Product Interface
+                    Google Play Store Interface ({selectedApp.screenshots.length} Screens)
+                  </span>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--accent-primary)' }}>
+                    100% Full Screen View (Zero Crop)
                   </span>
                 </div>
 
-                {/* Primary Official Play Store Banner Card */}
+                {/* Photorealistic Flagship Phone Frame */}
+                <div className="phone-mockup">
+                  <div className="phone-speaker-bar" />
+                  <div className="phone-screen">
+                    <AnimatePresence mode="wait">
+                      <motion.img
+                        key={`${selectedApp.id}-${activeSlideIndex}`}
+                        src={currentScreenshot.url}
+                        alt={currentScreenshot.caption}
+                        initial={{ opacity: 0, scale: 0.98 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.98 }}
+                        transition={{ duration: 0.22 }}
+                        loading="eager"
+                      />
+                    </AnimatePresence>
+                  </div>
+                </div>
+
+                {/* Slide Controls & Caption */}
                 <div
                   style={{
-                    borderRadius: '24px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '1rem',
+                    marginTop: '1.25rem',
+                  }}
+                >
+                  <button
+                    onClick={handlePrevSlide}
+                    className="btn btn-secondary btn-sm"
+                    style={{ width: '40px', height: '40px', padding: 0, borderRadius: '50%' }}
+                    aria-label="Previous screenshot"
+                  >
+                    <ChevronLeft size={18} />
+                  </button>
+
+                  <span style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-headline)' }}>
+                    Screen {activeSlideIndex + 1} of {selectedApp.screenshots.length}
+                  </span>
+
+                  <button
+                    onClick={handleNextSlide}
+                    className="btn btn-secondary btn-sm"
+                    style={{ width: '40px', height: '40px', padding: 0, borderRadius: '50%' }}
+                    aria-label="Next screenshot"
+                  >
+                    <ChevronRight size={18} />
+                  </button>
+                </div>
+
+                <p style={{ textAlign: 'center', fontSize: '0.85rem', color: 'var(--text-secondary)', marginTop: '0.5rem', fontWeight: 600 }}>
+                  {currentScreenshot.caption}
+                </p>
+
+                {/* Interactive Thumbnail Scroller Strip */}
+                <div
+                  style={{
+                    display: 'flex',
+                    gap: '0.5rem',
+                    overflowX: 'auto',
+                    padding: '0.75rem 0.25rem',
+                    marginTop: '0.75rem',
+                    justifyContent: 'center',
+                    WebkitOverflowScrolling: 'touch',
+                  }}
+                >
+                  {selectedApp.screenshots.map((s, idx) => {
+                    const isActive = idx === activeSlideIndex;
+                    return (
+                      <button
+                        key={idx}
+                        onClick={() => setActiveSlideIndex(idx)}
+                        style={{
+                          width: '42px',
+                          height: '75px',
+                          borderRadius: '8px',
+                          overflow: 'hidden',
+                          border: isActive ? '2px solid var(--accent-primary)' : '1px solid rgba(0, 0, 0, 0.12)',
+                          boxShadow: isActive ? '0 0 0 2px rgba(79, 70, 229, 0.25)' : 'none',
+                          cursor: 'pointer',
+                          padding: 0,
+                          backgroundColor: '#000',
+                          flexShrink: 0,
+                          opacity: isActive ? 1 : 0.65,
+                          transition: 'all 150ms ease',
+                        }}
+                        aria-label={`Jump to screen ${idx + 1}`}
+                      >
+                        <img
+                          src={s.url}
+                          alt=""
+                          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Primary Official Play Store Feature Banner Card */}
+                <div
+                  style={{
+                    borderRadius: '20px',
                     overflow: 'hidden',
                     border: '1px solid rgba(0, 0, 0, 0.08)',
-                    boxShadow: '0 16px 32px -8px rgba(0, 0, 0, 0.1)',
+                    boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.06)',
                     backgroundColor: '#FFFFFF',
-                    marginBottom: '1.75rem',
+                    marginTop: '2rem',
                   }}
                 >
                   <img
                     src={selectedApp.heroImage}
-                    alt={`${selectedApp.name} Official Play Store Banner`}
+                    alt={`${selectedApp.name} Official Play Store Feature Banner`}
                     style={{ width: '100%', height: 'auto', display: 'block' }}
                   />
                   <div
@@ -304,7 +452,7 @@ export const MobileAppsSection: React.FC = () => {
                     }}
                   >
                     <span style={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--text-headline)' }}>
-                      Official Google Play Store Graphic
+                      Official Play Store Feature Graphic
                     </span>
                     {selectedApp.playStoreUrl && (
                       <a
@@ -319,108 +467,35 @@ export const MobileAppsSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Additional Screenshots Carousel (StyleFleet or Operations) */}
-                {selectedApp.id === 'stylefleet' ? (
-                  <div>
-                    <div style={{ fontSize: '0.78rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-tertiary)', marginBottom: '0.75rem' }}>
-                      Interactive App Screens ({selectedApp.screenshots.length} Screens)
-                    </div>
-
-                    <div className="phone-mockup">
-                      <div className="phone-notch" />
-                      <div className="phone-screen">
-                        <AnimatePresence mode="wait">
-                          <motion.img
-                            key={activeSlideIndex}
-                            src={selectedApp.screenshots[activeSlideIndex].url}
-                            alt={selectedApp.screenshots[activeSlideIndex].caption}
-                            initial={{ opacity: 0, x: 20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -20 }}
-                            transition={{ duration: 0.25 }}
-                            loading="lazy"
-                          />
-                        </AnimatePresence>
-                      </div>
-                    </div>
-
+                {/* StyleFleet Web Dashboard Preview if available */}
+                {selectedApp.dashboardImage && (
+                  <div
+                    style={{
+                      borderRadius: '20px',
+                      overflow: 'hidden',
+                      border: '1px solid rgba(0, 0, 0, 0.08)',
+                      boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.06)',
+                      backgroundColor: '#FFFFFF',
+                      marginTop: '1.25rem',
+                    }}
+                  >
+                    <img
+                      src={selectedApp.dashboardImage}
+                      alt="Companion Web Management Dashboard"
+                      style={{ width: '100%', height: 'auto', display: 'block' }}
+                    />
                     <div
                       style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: '1rem',
-                        marginTop: '1.25rem',
+                        padding: '0.85rem 1.25rem',
+                        backgroundColor: '#FFFFFF',
+                        borderTop: '1px solid rgba(0, 0, 0, 0.06)',
                       }}
                     >
-                      <button
-                        onClick={handlePrevSlide}
-                        className="btn btn-secondary btn-sm"
-                        style={{ width: '40px', height: '40px', padding: 0, borderRadius: '50%' }}
-                        aria-label="Previous slide"
-                      >
-                        <ChevronLeft size={18} />
-                      </button>
-
-                      <span style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-headline)' }}>
-                        Screen {activeSlideIndex + 1} of {selectedApp.screenshots.length}
-                      </span>
-
-                      <button
-                        onClick={handleNextSlide}
-                        className="btn btn-secondary btn-sm"
-                        style={{ width: '40px', height: '40px', padding: 0, borderRadius: '50%' }}
-                        aria-label="Next slide"
-                      >
-                        <ChevronRight size={18} />
-                      </button>
-                    </div>
-
-                    <p style={{ textAlign: 'center', fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '0.5rem' }}>
-                      {selectedApp.screenshots[activeSlideIndex].caption}
-                    </p>
-                  </div>
-                ) : (
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                    <div className="browser-mockup">
-                      <div className="browser-header">
-                        <div className="browser-dots">
-                          <span className="browser-dot dot-red" />
-                          <span className="browser-dot dot-yellow" />
-                          <span className="browser-dot dot-green" />
-                        </div>
-                        <div className="browser-url-bar">
-                          counter365.pos/operations/catalog
-                        </div>
+                      <div style={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--text-headline)' }}>
+                        Companion Web Management Portal (Royal Cuts &amp; Spa)
                       </div>
-                      <div className="browser-content" style={{ maxHeight: '210px' }}>
-                        <img
-                          src="/assets/mobile/pc1.png"
-                          alt="Counter 365 Catalog Operations"
-                          loading="lazy"
-                          style={{ width: '100%', height: 'auto' }}
-                        />
-                      </div>
-                    </div>
-
-                    <div className="browser-mockup">
-                      <div className="browser-header">
-                        <div className="browser-dots">
-                          <span className="browser-dot dot-red" />
-                          <span className="browser-dot dot-yellow" />
-                          <span className="browser-dot dot-green" />
-                        </div>
-                        <div className="browser-url-bar">
-                          counter365.pos/billing/checkout-flow
-                        </div>
-                      </div>
-                      <div className="browser-content" style={{ maxHeight: '210px' }}>
-                        <img
-                          src="/assets/mobile/pc2.png"
-                          alt="Counter 365 Sales and Billing Workflow"
-                          loading="lazy"
-                          style={{ width: '100%', height: 'auto' }}
-                        />
+                      <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)' }}>
+                        Synchronized with mobile apps in real-time via Supabase database triggers.
                       </div>
                     </div>
                   </div>
@@ -429,6 +504,28 @@ export const MobileAppsSection: React.FC = () => {
 
               {/* Right Column: Verified Contributions & Engineering Architecture */}
               <div>
+                {/* Built from Scratch Highlights Card */}
+                <div
+                  style={{
+                    backgroundColor: '#FFFFFF',
+                    border: '1px solid rgba(79, 70, 229, 0.2)',
+                    borderRadius: '20px',
+                    padding: '1.35rem 1.5rem',
+                    marginBottom: '2rem',
+                    boxShadow: '0 8px 24px -4px rgba(79, 70, 229, 0.06)',
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                    <Code2 size={18} style={{ color: 'var(--accent-primary)' }} />
+                    <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1rem', color: 'var(--text-headline)' }}>
+                      Built from Scratch for Android &amp; iOS
+                    </span>
+                  </div>
+                  <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    Developed from scratch at <strong>Tecstellar Solutions</strong>. I established the cross-platform architecture using <strong>React Native &amp; Expo</strong>, ensuring single-codebase parity across Android APK/AAB and iOS builds, integrating Supabase authentication and offline local caching.
+                  </p>
+                </div>
+
                 {/* Product Purpose */}
                 <div style={{ marginBottom: '2rem' }}>
                   <h4 style={{ fontSize: '1.2rem', marginBottom: '0.65rem', color: 'var(--text-headline)' }}>
@@ -454,26 +551,26 @@ export const MobileAppsSection: React.FC = () => {
                     <CheckCircle2 size={18} style={{ color: 'var(--accent-emerald)' }} />
                     What I Personally Implemented at Tecstellar Solutions
                   </h4>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                     {selectedApp.verifiedContribution.map((item, idx) => (
                       <div
                         key={idx}
                         style={{
                           display: 'flex',
                           alignItems: 'flex-start',
-                          gap: '0.65rem',
+                          gap: '0.75rem',
                           fontSize: '0.95rem',
                           color: 'var(--text-secondary)',
-                          lineHeight: 1.5,
+                          lineHeight: 1.55,
                         }}
                       >
                         <span
                           style={{
-                            width: '6px',
-                            height: '6px',
+                            width: '7px',
+                            height: '7px',
                             borderRadius: '50%',
                             backgroundColor: 'var(--accent-primary)',
-                            marginTop: '9px',
+                            marginTop: '8px',
                             flexShrink: 0,
                           }}
                         />
@@ -528,7 +625,7 @@ export const MobileAppsSection: React.FC = () => {
                 {/* Technical Challenges & Solutions */}
                 <div style={{ marginBottom: '2rem' }}>
                   <h4 style={{ fontSize: '1.2rem', marginBottom: '0.85rem', color: 'var(--text-headline)' }}>
-                    Key Engineering Challenges &amp; Solutions
+                    Engineering Challenges &amp; Solutions
                   </h4>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
                     {selectedApp.technicalChallenges.map((item, idx) => (
@@ -556,7 +653,7 @@ export const MobileAppsSection: React.FC = () => {
                 {/* Technologies */}
                 <div>
                   <h4 style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-tertiary)', marginBottom: '0.65rem' }}>
-                    Technologies &amp; Libraries Applied
+                    Verified Technologies &amp; Build Tools
                   </h4>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                     {selectedApp.technologies.map((tech) => (

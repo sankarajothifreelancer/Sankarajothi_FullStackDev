@@ -51,11 +51,11 @@ export const AboutSection: React.FC = () => {
             </h3>
 
             <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '1.25rem' }}>
-              My software development journey is shaped by direct accountability. Over the past year, as an independent developer, I have worked directly with business clients across retail, healthcare, civil contracting, and data services to translate ambiguous requirements into dependable digital products.
+              My software development journey is shaped by direct accountability. Prior to joining Tecstellar Solutions, I operated as an independent freelance developer for over a year (<strong>July 2025 – August 2026</strong>), working directly with business clients across retail, healthcare, civil contracting, and data services to translate requirements into dependable digital products with 100% verified production deployments.
             </p>
 
             <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '1.25rem' }}>
-              At <strong>Tecstellar Solutions</strong> (my current professional company), I lead mobile feature development, building core capabilities for <strong>Counter 365</strong> (a point-of-sale retail mobile application released on the Google Play Store) and <strong>StyleFleet</strong> (a comprehensive salon and spa operations platform with synchronized web dashboards). Working with React Native, Expo, and Supabase has given me hands-on expertise in state management, cross-device ergonomics, offline data synchronization, and rigorous release validation.
+              At <strong>Tecstellar Solutions</strong> (my current professional role as Mobile Application Developer), I architected and built two production mobile applications from scratch for both <strong>Android and iOS</strong> using <strong>React Native, Expo, and Supabase</strong>: <strong>Counter 365</strong> (retail POS mobile application published on Google Play) and <strong>StyleFleet</strong> (salon and spa business operations platform). This experience has given me end-to-end expertise in mobile architecture from scratch, state management, cross-device ergonomics, offline data synchronization, and rigorous store release validation.
             </p>
 
             <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '1.5rem' }}>

@@ -150,7 +150,8 @@ export const Hero: React.FC = () => {
               </strong>{' '}
               at{' '}
               <strong style={{ color: 'var(--accent-primary)', fontWeight: 800 }}>Tecstellar Solutions</strong>{' '}
-              and independent full-stack engineer. Developing production-ready React Native applications (<strong>Counter 365</strong> on Google Play &amp; <strong>StyleFleet</strong> salon operations) alongside 10+ completed client websites.
+              (Aug 2026 – Present). I architect and build production mobile applications from scratch for both{' '}
+              <strong style={{ color: 'var(--text-headline)' }}>Android and iOS</strong> using React Native (<strong>Counter 365</strong> on Google Play &amp; <strong>StyleFleet</strong>). Previously delivered 10+ commercial client websites during 1+ year independent freelance practice (Jul 2025 – Aug 2026).
             </p>
 
             {/* Tactile Action Buttons */}
@@ -220,7 +221,7 @@ export const Hero: React.FC = () => {
                   2 Apps
                 </div>
                 <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '0.35rem', fontWeight: 600 }}>
-                  Tecstellar Solutions
+                  Android &amp; iOS From Scratch
                 </div>
               </div>
 
@@ -238,7 +239,7 @@ export const Hero: React.FC = () => {
                   10+
                 </div>
                 <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '0.35rem', fontWeight: 600 }}>
-                  Client Deliveries
+                  Client Sites (2025–26)
                 </div>
               </div>
 

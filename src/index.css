@@ -337,44 +337,52 @@ button {
   background: #F4F3EE;
 }
 
-/* Photorealistic Chamfered Phone Frame */
+/* Photorealistic Flagship Mobile Phone Frame (Zero-Cropping 9:16) */
 .phone-mockup {
   position: relative;
-  width: 295px;
+  width: 290px;
   max-width: 100%;
-  aspect-ratio: 9 / 19.5;
-  background: #18181B;
-  border-radius: 44px;
-  padding: 10px;
-  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.3), inset 0 0 0 2px rgba(255, 255, 255, 0.15);
+  aspect-ratio: 9 / 16;
+  background: #141416;
+  border-radius: 38px;
+  padding: 8px;
+  box-shadow:
+    0 25px 60px -12px rgba(0, 0, 0, 0.28),
+    0 8px 20px -6px rgba(0, 0, 0, 0.15),
+    inset 0 0 0 1.5px rgba(255, 255, 255, 0.14),
+    inset 0 0 0 3px #18181B;
   margin: 0 auto;
+}
+
+.phone-speaker-bar {
+  position: absolute;
+  top: 3.5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 3px;
+  background: #27272A;
+  border-radius: 9999px;
+  z-index: 20;
 }
 
 .phone-screen {
   position: relative;
   width: 100%;
   height: 100%;
-  background: #000;
-  border-radius: 36px;
+  background: #000000;
+  border-radius: 30px;
   overflow: hidden;
-}
-
-.phone-notch {
-  position: absolute;
-  top: 9px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 84px;
-  height: 18px;
-  background: #18181B;
-  border-radius: 20px;
-  z-index: 10;
+  display: flex;
+  align-items: center;
+  justifyContent: center;
 }
 
 .phone-screen img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  display: block;
 }
 
 /* Refined Pill Badges */
