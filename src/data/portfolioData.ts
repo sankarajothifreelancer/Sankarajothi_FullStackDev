@@ -91,9 +91,9 @@ export const PERSONAL_INFO = {
   brandName: "Sankarajothi K",
   subBrand: "Websites by Joo",
   headline: "Building Digital Products That Solve Real Problems.",
-  currentRoleCompany: "Mobile Application Developer at Textural Art Solutions",
+  currentRoleCompany: "Mobile Application Developer at Tecstellar Solutions",
   subheadline:
-    "Mobile Application Developer currently at Textural Art Solutions. Building production React Native mobile apps (Counter 365 & StyleFleet), scalable Supabase backends, and 10+ freelance full-stack web client deliveries.",
+    "Mobile Application Developer currently at Tecstellar Solutions. Building production React Native mobile apps (Counter 365 & StyleFleet), scalable Supabase backends, and 10+ freelance full-stack web client deliveries.",
   email: "sankarajothikumaraperumal@gmail.com",
   phone: "+91 9360396190",
   location: "Kalugumalai, Tamil Nadu, India",
@@ -119,7 +119,7 @@ export const MOBILE_APPS: MobileApp[] = [
     internalOrAltName: "Accounta365 / Retail POS",
     tagline: "Point-of-Sale & Retail Billing Mobile Application",
     role: "Mobile Application Developer",
-    company: "Textural Art Solutions",
+    company: "Tecstellar Solutions",
     timeline: "Aug 2026 – Present (Current Role)",
     platform: ["Android", "iOS", "Google Play Store"],
     technologies: [
@@ -131,7 +131,7 @@ export const MOBILE_APPS: MobileApp[] = [
       "TypeScript",
     ],
     overview:
-      "Counter 365 (developed at Textural Art Solutions, also referenced as Accounta365) is a production-grade point-of-sale and retail billing mobile application built to modernize counter checkout, inventory tracking, and paperless billing for local merchants and retail shops. I personally developed critical mobile interfaces, automated receipt dispatch, and contributed to the Google Play Store Android release.",
+      "Counter 365 (developed at Tecstellar Solutions, also referenced as Accounta365) is a production-grade point-of-sale and retail billing mobile application built to modernize counter checkout, inventory tracking, and paperless billing for local merchants and retail shops. I personally developed critical mobile interfaces, automated receipt dispatch, and contributed to the Google Play Store Android release.",
     verifiedContribution: [
       "Engineered touch-optimized mobile billing and checkout interfaces in React Native and Expo.",
       "Built the interactive item catalog with virtualized list rendering, enabling sub-second search and categorization across hundreds of items.",
@@ -193,7 +193,7 @@ export const MOBILE_APPS: MobileApp[] = [
     internalOrAltName: "Selfit / Salon & Spa Management",
     tagline: "Salon, Spa & Stylist Business Operations Platform",
     role: "Mobile Application Developer",
-    company: "Textural Art Solutions",
+    company: "Tecstellar Solutions",
     timeline: "Aug 2026 – Present (Current Role)",
     platform: ["Android", "iOS", "Web Management Dashboard"],
     technologies: [
@@ -205,7 +205,7 @@ export const MOBILE_APPS: MobileApp[] = [
       "Google Play Console",
     ],
     overview:
-      "StyleFleet (confirmed public name at Textural Art Solutions, internally referred to as Selfit) is an end-to-end salon and spa management ecosystem. It bridges cross-platform mobile apps for customers and stylists with an administrative web dashboard (Royal Cuts & Spa) to coordinate appointments, stylist chairs, service menus, and revenue.",
+      "StyleFleet (confirmed public name at Tecstellar Solutions, internally referred to as Selfit) is an end-to-end salon and spa management ecosystem. It bridges cross-platform mobile apps for customers and stylists with an administrative web dashboard (Royal Cuts & Spa) to coordinate appointments, stylist chairs, service menus, and revenue.",
     verifiedContribution: [
       "Developed cross-platform mobile booking workflows in React Native for Android and iOS devices.",
       "Created the interactive service menu catalog showcasing haircuts, spa treatments, pricing, and duration estimates.",
@@ -568,9 +568,9 @@ export const FREELANCE_METRICS: FreelanceMetric[] = [
 
 export const WORK_EXPERIENCE: ExperienceItem[] = [
   {
-    id: "textural",
+    id: "tecstellar",
     role: "Mobile Application Developer",
-    company: "Textural Art Solutions (Tecstellar)",
+    company: "Tecstellar Solutions",
     period: "Aug 2026 – Present (Current Role)",
     location: "Remote",
     type: "Current Full-Time Engineering Role",

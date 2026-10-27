@@ -105,7 +105,7 @@ export const Navbar: React.FC = () => {
                   fontWeight: 600,
                 }}
               >
-                Mobile App Developer @ Textural Art Solutions
+                Mobile App Developer @ Tecstellar Solutions
               </div>
             </div>
           </a>
@@ -248,7 +248,7 @@ export const Navbar: React.FC = () => {
                 }}
               >
                 <Building2 size={15} />
-                <span>Mobile App Dev @ Textural Art Solutions</span>
+                <span>Mobile App Dev @ Tecstellar Solutions</span>
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>

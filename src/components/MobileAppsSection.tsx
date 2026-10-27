@@ -54,7 +54,7 @@ export const MobileAppsSection: React.FC = () => {
           </div>
           <h2 className="section-title">Production Mobile Applications</h2>
           <p className="section-description">
-            Mobile applications engineered at <strong>Textural Art Solutions</strong> (my current professional role as Mobile Application Developer), powering retail POS counters and salon business ecosystems.
+            Mobile applications engineered at <strong>Tecstellar Solutions</strong> (my current professional role as Mobile Application Developer), powering retail POS counters and salon business ecosystems.
           </p>
         </div>
 
@@ -97,7 +97,7 @@ export const MobileAppsSection: React.FC = () => {
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
                 <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.05rem', color: 'var(--text-primary)' }}>
-                  Textural Art Solutions
+                  Tecstellar Solutions
                 </span>
                 <span className="badge badge-teal">Current Organization</span>
               </div>
@@ -174,7 +174,7 @@ export const MobileAppsSection: React.FC = () => {
                       color: isSelected ? 'rgba(255, 255, 255, 0.8)' : 'var(--text-muted)',
                     }}
                   >
-                    Textural Art Solutions • {app.statusBadge}
+                    Tecstellar Solutions • {app.statusBadge}
                   </div>
                 </div>
               </motion.button>
@@ -245,7 +245,7 @@ export const MobileAppsSection: React.FC = () => {
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
                   <Building2 size={15} style={{ color: 'var(--accent-primary)' }} />
-                  <span><strong>Organization:</strong> Textural Art Solutions</span>
+                  <span><strong>Organization:</strong> Tecstellar Solutions</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
                   <Calendar size={15} style={{ color: 'var(--accent-primary)' }} />
@@ -454,7 +454,7 @@ export const MobileAppsSection: React.FC = () => {
                     }}
                   >
                     <CheckCircle2 size={18} style={{ color: 'var(--accent-teal)' }} />
-                    What I Personally Implemented at Textural Art Solutions
+                    What I Personally Implemented at Tecstellar Solutions
                   </h4>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
                     {selectedApp.verifiedContribution.map((item, idx) => (

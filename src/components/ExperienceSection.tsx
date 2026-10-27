@@ -15,7 +15,7 @@ export const ExperienceSection: React.FC = () => {
           </div>
           <h2 className="section-title">Professional Experience</h2>
           <p className="section-description">
-            Mobile application engineering at <strong>Textural Art Solutions</strong> combined with 10+ independent client deliverables and engineering internships.
+            Mobile application engineering at <strong>Tecstellar Solutions</strong> combined with 10+ independent client deliverables and engineering internships.
           </p>
         </div>
 

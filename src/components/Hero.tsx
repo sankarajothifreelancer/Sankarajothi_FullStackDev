@@ -42,7 +42,7 @@ export const Hero: React.FC = () => {
       }}
     >
       <div className="container">
-        {/* Top Floating Pill: Active Role at Textural Art Solutions */}
+        {/* Top Floating Pill: Active Role at Tecstellar Solutions */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -90,7 +90,7 @@ export const Hero: React.FC = () => {
               }}
             >
               <Building2 size={14} />
-              <span>Textural Art Solutions (Current)</span>
+              <span>Tecstellar Solutions (Current)</span>
             </div>
           </div>
         </motion.div>
@@ -145,7 +145,7 @@ export const Hero: React.FC = () => {
                 Mobile Application &amp; Full Stack Developer
               </strong>{' '}
               currently engineering cross-platform products at{' '}
-              <strong style={{ color: 'var(--accent-primary)', fontWeight: 700 }}>Textural Art Solutions</strong>.
+              <strong style={{ color: 'var(--accent-primary)', fontWeight: 700 }}>Tecstellar Solutions</strong>.
               Developer of <strong>Counter 365</strong> (retail POS on Google Play) and <strong>StyleFleet</strong> (salon management platform), alongside 10+ independent client deliverables.
             </p>
 
@@ -215,7 +215,7 @@ export const Hero: React.FC = () => {
                   2 Apps
                 </div>
                 <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
-                  Textural Art Solutions
+                  Tecstellar Solutions
                 </div>
               </div>
 
@@ -299,7 +299,7 @@ export const Hero: React.FC = () => {
                       fontWeight: 600,
                     }}
                   >
-                    textural-art-solutions.ts
+                    tecstellar-solutions.ts
                   </span>
                 </div>
 
@@ -481,7 +481,7 @@ export const Hero: React.FC = () => {
                       }}
                     >
                       <div><span style={{ color: '#818CF8' }}>const</span> activeArchitecture = &#123;</div>
-                      <div style={{ paddingLeft: '1.25rem' }}>company: <span style={{ color: '#34D399' }}>'Textural Art Solutions'</span>,</div>
+                      <div style={{ paddingLeft: '1.25rem' }}>company: <span style={{ color: '#34D399' }}>'Tecstellar Solutions'</span>,</div>
                       <div style={{ paddingLeft: '1.25rem' }}>mobileApps: [<span style={{ color: '#60A5FA' }}>'Counter 365'</span>, <span style={{ color: '#60A5FA' }}>'StyleFleet'</span>],</div>
                       <div style={{ paddingLeft: '1.25rem' }}>stack: <span style={{ color: '#FCD34D' }}>['React Native', 'Expo', 'Supabase', 'Node.js']</span>,</div>
                       <div style={{ paddingLeft: '1.25rem' }}>freelanceDeployments: <span style={{ color: '#F472B6' }}>'10+ verified live clients'</span></div>
@@ -532,7 +532,7 @@ export const Hero: React.FC = () => {
                           2 Apps
                         </div>
                         <div style={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--text-primary)', marginTop: '4px' }}>
-                          Textural Art Solutions
+                          Tecstellar Solutions
                         </div>
                         <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
                           Published on Google Play Store
