@@ -1,6 +1,7 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { PERSONAL_INFO } from '../data/portfolioData';
-import { ArrowUp, Mail, Smartphone, Heart } from 'lucide-react';
+import { ArrowUp, Mail, Smartphone } from 'lucide-react';
 import { LinkedinIcon, GithubIcon } from './BrandIcons';
 
 export const Footer: React.FC = () => {
@@ -12,9 +13,11 @@ export const Footer: React.FC = () => {
     <footer
       style={{
         backgroundColor: '#FFFFFF',
-        borderTop: '1px solid var(--border-light)',
-        paddingTop: '3.5rem',
-        paddingBottom: '2.5rem',
+        borderTop: '1px solid rgba(0, 0, 0, 0.08)',
+        paddingTop: '4rem',
+        paddingBottom: '3rem',
+        position: 'relative',
+        zIndex: 1,
       }}
     >
       <div className="container">
@@ -24,21 +27,21 @@ export const Footer: React.FC = () => {
             justifyContent: 'space-between',
             alignItems: 'flex-start',
             flexWrap: 'wrap',
-            gap: '2.5rem',
-            paddingBottom: '2.5rem',
-            borderBottom: '1px solid var(--border-light)',
-            marginBottom: '2rem',
+            gap: '3rem',
+            paddingBottom: '3rem',
+            borderBottom: '1px solid rgba(0, 0, 0, 0.06)',
+            marginBottom: '2.5rem',
           }}
         >
-          {/* Brand & Summary */}
-          <div style={{ maxWidth: '380px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.85rem' }}>
+          {/* Brand Info */}
+          <div style={{ maxWidth: '420px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
               <div
                 style={{
-                  width: '34px',
-                  height: '34px',
-                  borderRadius: '8px',
-                  backgroundColor: 'var(--text-primary)',
+                  width: '38px',
+                  height: '38px',
+                  borderRadius: '50%',
+                  backgroundColor: '#09090B',
                   color: '#FFFFFF',
                   display: 'flex',
                   alignItems: 'center',
@@ -51,42 +54,42 @@ export const Footer: React.FC = () => {
                 SK
               </div>
               <div>
-                <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.05rem', color: 'var(--text-primary)' }}>
+                <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.1rem', color: 'var(--text-headline)' }}>
                   {PERSONAL_INFO.name}
                 </div>
-                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                  Full Stack &amp; Mobile Application Developer
+                <div style={{ fontSize: '0.75rem', color: 'var(--accent-primary)', fontWeight: 700 }}>
+                  Mobile Application Developer @ Tecstellar Solutions
                 </div>
               </div>
             </div>
 
-            <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
-              Crafting dependable mobile applications with React Native and production-ready full-stack web platforms for business clients and technology companies.
+            <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', lineHeight: 1.65 }}>
+              Specialized in production React Native mobile engineering, synchronized Supabase cloud backends, and full-stack web platforms for business clients.
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div style={{ display: 'flex', gap: '3rem', flexWrap: 'wrap' }}>
+          {/* Navigation Links Columns */}
+          <div style={{ display: 'flex', gap: '4rem', flexWrap: 'wrap' }}>
             <div>
               <div
                 style={{
                   fontSize: '0.75rem',
-                  fontWeight: 700,
+                  fontWeight: 800,
                   textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                  color: 'var(--text-primary)',
+                  letterSpacing: '0.09em',
+                  color: 'var(--text-headline)',
                   marginBottom: '1rem',
                 }}
               >
                 Navigation
               </div>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem', padding: 0 }}>
-                <li><a href="#projects" style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>Selected Work</a></li>
-                <li><a href="#mobile-apps" style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>Mobile Applications</a></li>
-                <li><a href="#freelance" style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>Freelance Experience</a></li>
-                <li><a href="#experience" style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>Career Timeline</a></li>
-                <li><a href="#skills" style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>Technical Skills</a></li>
-                <li><a href="#about" style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>About Me</a></li>
+              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.65rem', padding: 0 }}>
+                <li><a href="#mobile-apps" style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', fontWeight: 600 }}>Mobile Applications</a></li>
+                <li><a href="#projects" style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>Selected Work</a></li>
+                <li><a href="#freelance" style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>Freelance Experience</a></li>
+                <li><a href="#experience" style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>Career Timeline</a></li>
+                <li><a href="#skills" style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>Technical Skills</a></li>
+                <li><a href="#about" style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>About Me</a></li>
               </ul>
             </div>
 
@@ -94,24 +97,24 @@ export const Footer: React.FC = () => {
               <div
                 style={{
                   fontSize: '0.75rem',
-                  fontWeight: 700,
+                  fontWeight: 800,
                   textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                  color: 'var(--text-primary)',
+                  letterSpacing: '0.09em',
+                  color: 'var(--text-headline)',
                   marginBottom: '1rem',
                 }}
               >
                 Connect
               </div>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem', padding: 0 }}>
+              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.65rem', padding: 0 }}>
                 <li>
                   <a
                     href={PERSONAL_INFO.socials.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ fontSize: '0.88rem', color: 'var(--text-muted)', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+                    style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
                   >
-                    <LinkedinIcon size={14} />
+                    <LinkedinIcon size={15} style={{ color: '#0A66C2' }} />
                     LinkedIn
                   </a>
                 </li>
@@ -120,18 +123,18 @@ export const Footer: React.FC = () => {
                     href={PERSONAL_INFO.socials.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ fontSize: '0.88rem', color: 'var(--text-muted)', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+                    style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
                   >
-                    <GithubIcon size={14} />
+                    <GithubIcon size={15} />
                     GitHub
                   </a>
                 </li>
                 <li>
                   <a
                     href={`mailto:${PERSONAL_INFO.email}`}
-                    style={{ fontSize: '0.88rem', color: 'var(--text-muted)', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+                    style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
                   >
-                    <Mail size={14} />
+                    <Mail size={15} />
                     Email
                   </a>
                 </li>
@@ -140,7 +143,7 @@ export const Footer: React.FC = () => {
                     href={PERSONAL_INFO.resumePath}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ fontSize: '0.88rem', color: 'var(--accent-primary)', fontWeight: 600 }}
+                    style={{ fontSize: '0.88rem', color: 'var(--accent-primary)', fontWeight: 700 }}
                   >
                     Download Resume (PDF)
                   </a>
@@ -151,15 +154,17 @@ export const Footer: React.FC = () => {
 
           {/* Back to Top Button */}
           <div>
-            <button
+            <motion.button
+              whileHover={{ y: -3, scale: 1.02 }}
+              whileTap={{ scale: 0.96 }}
               onClick={scrollToTop}
               className="btn btn-secondary btn-sm"
-              style={{ gap: '0.45rem' }}
+              style={{ gap: '0.45rem', borderRadius: '9999px', padding: '0.55rem 1.15rem' }}
               aria-label="Scroll back to top"
             >
               <span>Back to Top</span>
               <ArrowUp size={14} />
-            </button>
+            </motion.button>
           </div>
         </div>
 
@@ -171,15 +176,15 @@ export const Footer: React.FC = () => {
             alignItems: 'center',
             flexWrap: 'wrap',
             gap: '1rem',
-            fontSize: '0.82rem',
-            color: 'var(--text-muted)',
+            fontSize: '0.85rem',
+            color: 'var(--text-tertiary)',
           }}
         >
           <div>
-            &copy; {new Date().getFullYear()} {PERSONAL_INFO.name}. Built with React, TypeScript &amp; modern design tokens.
+            &copy; {new Date().getFullYear()} {PERSONAL_INFO.name}. Architected with React, TypeScript &amp; Framer Motion.
           </div>
           <div>
-            Reference: <strong>{PERSONAL_INFO.subBrand}</strong> • Kalugumalai, Tamil Nadu, India
+            Kalugumalai, Tamil Nadu, India • Open to Global Remote Opportunities
           </div>
         </div>
       </div>
