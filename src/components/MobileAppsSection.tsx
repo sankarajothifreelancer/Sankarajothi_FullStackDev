@@ -9,9 +9,7 @@ import {
   ShieldCheck,
   Building2,
   Calendar,
-  Sparkles,
   ExternalLink,
-  Layers,
 } from 'lucide-react';
 
 export const MobileAppsSection: React.FC = () => {
@@ -40,9 +38,9 @@ export const MobileAppsSection: React.FC = () => {
       id="mobile-apps"
       className="section"
       style={{
-        backgroundColor: 'var(--bg-elevated)',
-        borderTop: '1px solid var(--border-light)',
-        borderBottom: '1px solid var(--border-light)',
+        backgroundColor: '#FFFFFF',
+        borderTop: '1px solid rgba(0, 0, 0, 0.08)',
+        borderBottom: '1px solid rgba(0, 0, 0, 0.08)',
       }}
     >
       <div className="container">
@@ -50,11 +48,11 @@ export const MobileAppsSection: React.FC = () => {
         <div className="section-header">
           <div className="section-eyebrow">
             <Smartphone size={14} />
-            Mobile Engineering Deep-Dive
+            Mobile Engineering Showcase
           </div>
           <h2 className="section-title">Production Mobile Applications</h2>
           <p className="section-description">
-            Mobile applications engineered at <strong>Tecstellar Solutions</strong> (my current professional role as Mobile Application Developer), powering retail POS counters and salon business ecosystems.
+            Published cross-platform applications built at <strong>Tecstellar Solutions</strong> (my current professional role as Mobile Application Developer), powering retail POS checkout and salon business ecosystems.
           </p>
         </div>
 
@@ -65,9 +63,9 @@ export const MobileAppsSection: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           style={{
-            backgroundColor: '#FFFFFF',
-            border: '1px solid var(--border-light)',
-            borderRadius: 'var(--radius-lg)',
+            backgroundColor: 'var(--bg-canvas)',
+            border: '1px solid rgba(0, 0, 0, 0.08)',
+            borderRadius: '24px',
             padding: '1.25rem 1.75rem',
             marginBottom: '2.5rem',
             display: 'flex',
@@ -75,7 +73,7 @@ export const MobileAppsSection: React.FC = () => {
             justifyContent: 'space-between',
             flexWrap: 'wrap',
             gap: '1rem',
-            boxShadow: '0 4px 20px -2px rgba(15, 23, 42, 0.04)',
+            boxShadow: '0 4px 20px -2px rgba(15, 23, 42, 0.03)',
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
@@ -84,11 +82,12 @@ export const MobileAppsSection: React.FC = () => {
                 width: '42px',
                 height: '42px',
                 borderRadius: '12px',
-                backgroundColor: 'var(--accent-light)',
+                backgroundColor: '#FFFFFF',
                 color: 'var(--accent-primary)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.06)',
                 flexShrink: 0,
               }}
             >
@@ -96,10 +95,10 @@ export const MobileAppsSection: React.FC = () => {
             </div>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-                <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.05rem', color: 'var(--text-primary)' }}>
+                <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.05rem', color: 'var(--text-headline)' }}>
                   Tecstellar Solutions
                 </span>
-                <span className="badge badge-teal">Current Organization</span>
+                <span className="badge badge-teal">Active Employment</span>
               </div>
               <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
                 <strong>Role:</strong> Mobile Application Developer • Aug 2026 – Present
@@ -107,8 +106,8 @@ export const MobileAppsSection: React.FC = () => {
             </div>
           </div>
 
-          <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', maxWidth: '420px', lineHeight: 1.5 }}>
-            Both applications below (<strong>Counter 365</strong> &amp; <strong>StyleFleet</strong>) represent core mobile systems I personally developed and shipped in this role.
+          <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', maxWidth: '440px', lineHeight: 1.5 }}>
+            Both applications below (<strong>Counter 365</strong> &amp; <strong>StyleFleet</strong>) are production mobile apps I personally contributed to and published on the Google Play Store.
           </div>
         </motion.div>
 
@@ -137,11 +136,11 @@ export const MobileAppsSection: React.FC = () => {
                   alignItems: 'center',
                   gap: '0.85rem',
                   padding: '1.1rem 1.75rem',
-                  borderRadius: '20px',
-                  backgroundColor: isSelected ? 'var(--text-primary)' : '#FFFFFF',
-                  color: isSelected ? '#FFFFFF' : 'var(--text-primary)',
-                  border: isSelected ? '1px solid var(--text-primary)' : '1px solid var(--border-light)',
-                  boxShadow: isSelected ? '0 12px 28px -4px rgba(15, 23, 42, 0.15)' : 'var(--shadow-sm)',
+                  borderRadius: '24px',
+                  backgroundColor: isSelected ? 'var(--text-headline)' : '#FFFFFF',
+                  color: isSelected ? '#FFFFFF' : 'var(--text-headline)',
+                  border: isSelected ? '1px solid var(--text-headline)' : '1px solid rgba(0, 0, 0, 0.08)',
+                  boxShadow: isSelected ? '0 16px 32px -4px rgba(0, 0, 0, 0.18)' : '0 2px 8px rgba(0, 0, 0, 0.03)',
                   transition: 'all 200ms ease',
                   cursor: 'pointer',
                   textAlign: 'left',
@@ -150,28 +149,28 @@ export const MobileAppsSection: React.FC = () => {
               >
                 <div
                   style={{
-                    width: '40px',
-                    height: '40px',
-                    borderRadius: '10px',
-                    backgroundColor: isSelected ? 'rgba(255, 255, 255, 0.18)' : 'var(--accent-light)',
+                    width: '42px',
+                    height: '42px',
+                    borderRadius: '12px',
+                    backgroundColor: isSelected ? 'rgba(255, 255, 255, 0.18)' : 'var(--accent-soft)',
                     color: isSelected ? '#FFFFFF' : 'var(--accent-primary)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    fontWeight: 700,
+                    fontWeight: 800,
                     flexShrink: 0,
                   }}
                 >
                   <Smartphone size={22} />
                 </div>
                 <div>
-                  <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.15rem' }}>
+                  <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.2rem', letterSpacing: '-0.02em' }}>
                     {app.name}
                   </div>
                   <div
                     style={{
-                      fontSize: '0.78rem',
-                      color: isSelected ? 'rgba(255, 255, 255, 0.8)' : 'var(--text-muted)',
+                      fontSize: '0.8rem',
+                      color: isSelected ? 'rgba(255, 255, 255, 0.8)' : 'var(--text-secondary)',
                     }}
                   >
                     Tecstellar Solutions • {app.statusBadge}
@@ -182,7 +181,7 @@ export const MobileAppsSection: React.FC = () => {
           })}
         </div>
 
-        {/* Detailed Application Card */}
+        {/* Active Application Detailed Showcase Card */}
         <AnimatePresence mode="wait">
           <motion.div
             key={selectedApp.id}
@@ -190,16 +189,15 @@ export const MobileAppsSection: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ type: 'spring', stiffness: 100, damping: 20 }}
-            className="card-base"
             style={{
-              backgroundColor: '#FFFFFF',
+              backgroundColor: 'var(--bg-canvas)',
               padding: 'clamp(1.5rem, 3.5vw, 2.75rem)',
-              borderRadius: '24px',
-              border: '1px solid var(--border-light)',
-              boxShadow: '0 20px 40px -15px rgba(15, 23, 42, 0.05)',
+              borderRadius: '32px',
+              border: '1px solid rgba(0, 0, 0, 0.08)',
+              boxShadow: '0 20px 40px -15px rgba(0, 0, 0, 0.05)',
             }}
           >
-            {/* Header Strip */}
+            {/* Header Strip with Live Play Store CTA */}
             <div
               style={{
                 display: 'flex',
@@ -208,16 +206,16 @@ export const MobileAppsSection: React.FC = () => {
                 flexWrap: 'wrap',
                 gap: '1.5rem',
                 paddingBottom: '2rem',
-                borderBottom: '1px solid var(--border-light)',
+                borderBottom: '1px solid rgba(0, 0, 0, 0.08)',
                 marginBottom: '2rem',
               }}
             >
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '0.5rem' }}>
-                  <h3 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.3rem)', fontFamily: 'var(--font-display)', fontWeight: 800 }}>
+                  <h3 style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.4rem)', fontFamily: 'var(--font-display)', fontWeight: 800 }}>
                     {selectedApp.name}
                   </h3>
-                  <span className="badge badge-indigo">
+                  <span className="badge badge-teal">
                     <ShieldCheck size={13} />
                     {selectedApp.statusBadge}
                   </span>
@@ -227,34 +225,34 @@ export const MobileAppsSection: React.FC = () => {
                     </span>
                   )}
                 </div>
-                <p style={{ fontSize: '1.15rem', color: 'var(--accent-primary)', fontWeight: 600 }}>
+                <p style={{ fontSize: '1.15rem', color: 'var(--accent-primary)', fontWeight: 700 }}>
                   {selectedApp.tagline}
                 </p>
               </div>
 
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '0.4rem',
-                  backgroundColor: 'var(--bg-elevated)',
-                  padding: '0.85rem 1.25rem',
-                  borderRadius: '14px',
-                  border: '1px solid var(--border-subtle)',
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                  <Building2 size={15} style={{ color: 'var(--accent-primary)' }} />
-                  <span><strong>Organization:</strong> Tecstellar Solutions</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                  <Calendar size={15} style={{ color: 'var(--accent-primary)' }} />
-                  <span><strong>Timeline:</strong> {selectedApp.timeline}</span>
-                </div>
-              </div>
+              {/* Direct Play Store Link Button */}
+              {selectedApp.playStoreUrl && (
+                <motion.a
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  href={selectedApp.playStoreUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary"
+                  style={{
+                    backgroundColor: '#09090B',
+                    padding: '0.75rem 1.45rem',
+                    borderRadius: '9999px',
+                    gap: '0.5rem',
+                  }}
+                >
+                  <ExternalLink size={16} />
+                  <span>View on Google Play Store</span>
+                </motion.a>
+              )}
             </div>
 
-            {/* Split Grid: Left Device Frames & Mockups, Right Architecture Breakdown */}
+            {/* Split Grid: Left Device Visuals & Official Play Store Showcase, Right Technical Deep-Dive */}
             <div
               style={{
                 display: 'grid',
@@ -263,25 +261,71 @@ export const MobileAppsSection: React.FC = () => {
                 alignItems: 'flex-start',
               }}
             >
-              {/* Left Column: Phone/Desktop Mockups */}
+              {/* Left Column: Official Store Showcase & Slides */}
               <div>
                 <div style={{ marginBottom: '1.25rem' }}>
                   <span
                     style={{
                       fontSize: '0.75rem',
-                      fontWeight: 700,
+                      fontWeight: 800,
                       textTransform: 'uppercase',
-                      letterSpacing: '0.08em',
-                      color: 'var(--text-muted)',
+                      letterSpacing: '0.09em',
+                      color: 'var(--text-tertiary)',
                     }}
                   >
-                    Product Visuals &amp; Screen Evidence
+                    Official Store Assets &amp; Product Interface
                   </span>
                 </div>
 
+                {/* Primary Official Play Store Banner Card */}
+                <div
+                  style={{
+                    borderRadius: '24px',
+                    overflow: 'hidden',
+                    border: '1px solid rgba(0, 0, 0, 0.08)',
+                    boxShadow: '0 16px 32px -8px rgba(0, 0, 0, 0.1)',
+                    backgroundColor: '#FFFFFF',
+                    marginBottom: '1.75rem',
+                  }}
+                >
+                  <img
+                    src={selectedApp.heroImage}
+                    alt={`${selectedApp.name} Official Play Store Banner`}
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                  />
+                  <div
+                    style={{
+                      padding: '0.85rem 1.25rem',
+                      backgroundColor: '#FFFFFF',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      borderTop: '1px solid rgba(0, 0, 0, 0.06)',
+                    }}
+                  >
+                    <span style={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--text-headline)' }}>
+                      Official Google Play Store Graphic
+                    </span>
+                    {selectedApp.playStoreUrl && (
+                      <a
+                        href={selectedApp.playStoreUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ fontSize: '0.8rem', color: 'var(--accent-primary)', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.25rem' }}
+                      >
+                        Open Store Listing <ExternalLink size={12} />
+                      </a>
+                    )}
+                  </div>
+                </div>
+
+                {/* Additional Screenshots Carousel (StyleFleet or Operations) */}
                 {selectedApp.id === 'stylefleet' ? (
                   <div>
-                    {/* StyleFleet Real Phone Frame Mockup */}
+                    <div style={{ fontSize: '0.78rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-tertiary)', marginBottom: '0.75rem' }}>
+                      Interactive App Screens ({selectedApp.screenshots.length} Screens)
+                    </div>
+
                     <div className="phone-mockup">
                       <div className="phone-notch" />
                       <div className="phone-screen">
@@ -300,14 +344,13 @@ export const MobileAppsSection: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* Carousel Controls */}
                     <div
                       style={{
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         gap: '1rem',
-                        marginTop: '1.5rem',
+                        marginTop: '1.25rem',
                       }}
                     >
                       <button
@@ -319,7 +362,7 @@ export const MobileAppsSection: React.FC = () => {
                         <ChevronLeft size={18} />
                       </button>
 
-                      <span style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-secondary)' }}>
+                      <span style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-headline)' }}>
                         Screen {activeSlideIndex + 1} of {selectedApp.screenshots.length}
                       </span>
 
@@ -333,57 +376,12 @@ export const MobileAppsSection: React.FC = () => {
                       </button>
                     </div>
 
-                    <p
-                      style={{
-                        textAlign: 'center',
-                        fontSize: '0.8rem',
-                        color: 'var(--text-muted)',
-                        marginTop: '0.65rem',
-                      }}
-                    >
+                    <p style={{ textAlign: 'center', fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '0.5rem' }}>
                       {selectedApp.screenshots[activeSlideIndex].caption}
                     </p>
-
-                    {/* Companion Web Dashboard */}
-                    {selectedApp.dashboardImage && (
-                      <div style={{ marginTop: '2rem' }}>
-                        <div
-                          style={{
-                            fontSize: '0.75rem',
-                            fontWeight: 700,
-                            textTransform: 'uppercase',
-                            color: 'var(--text-muted)',
-                            marginBottom: '0.5rem',
-                          }}
-                        >
-                          Companion Web Management Dashboard (Royal Cuts &amp; Spa)
-                        </div>
-                        <div className="browser-mockup">
-                          <div className="browser-header">
-                            <div className="browser-dots">
-                              <span className="browser-dot dot-red" />
-                              <span className="browser-dot dot-yellow" />
-                              <span className="browser-dot dot-green" />
-                            </div>
-                            <div className="browser-url-bar">
-                              stylefleet.salon/dashboard/royal-cuts-spa
-                            </div>
-                          </div>
-                          <div className="browser-content" style={{ maxHeight: '200px' }}>
-                            <img
-                              src={selectedApp.dashboardImage}
-                              alt="StyleFleet Web Dashboard"
-                              loading="lazy"
-                              style={{ width: '100%', height: 'auto' }}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    )}
                   </div>
                 ) : (
-                  /* Counter 365 Device Frames */
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                     <div className="browser-mockup">
                       <div className="browser-header">
                         <div className="browser-dots">
@@ -395,7 +393,7 @@ export const MobileAppsSection: React.FC = () => {
                           counter365.pos/operations/catalog
                         </div>
                       </div>
-                      <div className="browser-content" style={{ maxHeight: '230px' }}>
+                      <div className="browser-content" style={{ maxHeight: '210px' }}>
                         <img
                           src="/assets/mobile/pc1.png"
                           alt="Counter 365 Catalog Operations"
@@ -416,7 +414,7 @@ export const MobileAppsSection: React.FC = () => {
                           counter365.pos/billing/checkout-flow
                         </div>
                       </div>
-                      <div className="browser-content" style={{ maxHeight: '230px' }}>
+                      <div className="browser-content" style={{ maxHeight: '210px' }}>
                         <img
                           src="/assets/mobile/pc2.png"
                           alt="Counter 365 Sales and Billing Workflow"
@@ -429,31 +427,31 @@ export const MobileAppsSection: React.FC = () => {
                 )}
               </div>
 
-              {/* Right Column: Contributions & Features */}
+              {/* Right Column: Verified Contributions & Engineering Architecture */}
               <div>
                 {/* Product Purpose */}
                 <div style={{ marginBottom: '2rem' }}>
-                  <h4 style={{ fontSize: '1.15rem', marginBottom: '0.65rem', color: 'var(--text-primary)' }}>
+                  <h4 style={{ fontSize: '1.2rem', marginBottom: '0.65rem', color: 'var(--text-headline)' }}>
                     Product Purpose &amp; Business Value
                   </h4>
-                  <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', lineHeight: 1.65 }}>
+                  <p style={{ fontSize: '1.02rem', color: 'var(--text-secondary)', lineHeight: 1.65 }}>
                     {selectedApp.overview}
                   </p>
                 </div>
 
-                {/* Verified Personal Contribution */}
+                {/* Verified Contribution */}
                 <div style={{ marginBottom: '2rem' }}>
                   <h4
                     style={{
-                      fontSize: '1.15rem',
+                      fontSize: '1.2rem',
                       marginBottom: '0.85rem',
-                      color: 'var(--text-primary)',
+                      color: 'var(--text-headline)',
                       display: 'flex',
                       alignItems: 'center',
                       gap: '0.5rem',
                     }}
                   >
-                    <CheckCircle2 size={18} style={{ color: 'var(--accent-teal)' }} />
+                    <CheckCircle2 size={18} style={{ color: 'var(--accent-emerald)' }} />
                     What I Personally Implemented at Tecstellar Solutions
                   </h4>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
@@ -464,8 +462,9 @@ export const MobileAppsSection: React.FC = () => {
                           display: 'flex',
                           alignItems: 'flex-start',
                           gap: '0.65rem',
-                          fontSize: '0.94rem',
+                          fontSize: '0.95rem',
                           color: 'var(--text-secondary)',
+                          lineHeight: 1.5,
                         }}
                       >
                         <span
@@ -484,10 +483,10 @@ export const MobileAppsSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Key Features Implemented */}
+                {/* Core Key Features */}
                 <div style={{ marginBottom: '2rem' }}>
-                  <h4 style={{ fontSize: '1.15rem', marginBottom: '0.85rem', color: 'var(--text-primary)' }}>
-                    Core Functionality Delivered
+                  <h4 style={{ fontSize: '1.2rem', marginBottom: '0.85rem', color: 'var(--text-headline)' }}>
+                    Key Functionality Delivered
                   </h4>
                   <div
                     style={{
@@ -500,18 +499,19 @@ export const MobileAppsSection: React.FC = () => {
                       <div
                         key={idx}
                         style={{
-                          padding: '1.15rem',
-                          borderRadius: '16px',
-                          backgroundColor: 'var(--bg-elevated)',
-                          border: '1px solid var(--border-subtle)',
+                          padding: '1.25rem',
+                          borderRadius: '20px',
+                          backgroundColor: '#FFFFFF',
+                          border: '1px solid rgba(0, 0, 0, 0.06)',
+                          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.02)',
                         }}
                       >
                         <div
                           style={{
                             fontFamily: 'var(--font-display)',
-                            fontWeight: 700,
-                            fontSize: '0.95rem',
-                            color: 'var(--text-primary)',
+                            fontWeight: 800,
+                            fontSize: '0.98rem',
+                            color: 'var(--text-headline)',
                             marginBottom: '0.35rem',
                           }}
                         >
@@ -527,7 +527,7 @@ export const MobileAppsSection: React.FC = () => {
 
                 {/* Technical Challenges & Solutions */}
                 <div style={{ marginBottom: '2rem' }}>
-                  <h4 style={{ fontSize: '1.15rem', marginBottom: '0.85rem', color: 'var(--text-primary)' }}>
+                  <h4 style={{ fontSize: '1.2rem', marginBottom: '0.85rem', color: 'var(--text-headline)' }}>
                     Key Engineering Challenges &amp; Solutions
                   </h4>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
@@ -535,32 +535,32 @@ export const MobileAppsSection: React.FC = () => {
                       <div
                         key={idx}
                         style={{
-                          padding: '1rem 1.25rem',
-                          borderRadius: '14px',
-                          borderLeft: '3px solid var(--accent-primary)',
+                          padding: '1.15rem 1.35rem',
+                          borderRadius: '16px',
+                          borderLeft: '4px solid var(--accent-primary)',
                           backgroundColor: '#FFFFFF',
-                          border: '1px solid var(--border-light)',
+                          border: '1px solid rgba(0, 0, 0, 0.06)',
                         }}
                       >
-                        <div style={{ fontSize: '0.88rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.35rem' }}>
+                        <div style={{ fontSize: '0.9rem', fontWeight: 800, color: 'var(--text-headline)', marginBottom: '0.35rem' }}>
                           Challenge: {item.challenge}
                         </div>
                         <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                          <strong style={{ color: 'var(--accent-teal)' }}>Solution:</strong> {item.solution}
+                          <strong style={{ color: 'var(--accent-emerald)' }}>Solution:</strong> {item.solution}
                         </div>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                {/* Technologies Applied */}
+                {/* Technologies */}
                 <div>
-                  <h4 style={{ fontSize: '0.82rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-muted)', marginBottom: '0.65rem' }}>
+                  <h4 style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-tertiary)', marginBottom: '0.65rem' }}>
                     Technologies &amp; Libraries Applied
                   </h4>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                     {selectedApp.technologies.map((tech) => (
-                      <span key={tech} className="badge badge-neutral" style={{ padding: '0.35rem 0.85rem', fontSize: '0.85rem' }}>
+                      <span key={tech} className="badge badge-neutral" style={{ padding: '0.4rem 0.9rem', fontSize: '0.85rem' }}>
                         {tech}
                       </span>
                     ))}

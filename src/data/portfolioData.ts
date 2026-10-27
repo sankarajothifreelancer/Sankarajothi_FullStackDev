@@ -27,6 +27,7 @@ export interface MobileApp {
   dashboardImage?: string;
   statusBadge: string;
   storeStatus: string;
+  playStoreUrl?: string;
 }
 
 export interface Project {
@@ -175,6 +176,10 @@ export const MOBILE_APPS: MobileApp[] = [
     ],
     screenshots: [
       {
+        url: "/assets/mobile/counter365_banner.png",
+        caption: "Counter 365 Official Store Showcase: Bill in 3 taps, track every rupee",
+      },
+      {
         url: "/assets/mobile/pc1.png",
         caption: "Counter 365 Operations & Catalog Management View",
       },
@@ -183,9 +188,10 @@ export const MOBILE_APPS: MobileApp[] = [
         caption: "Counter 365 Sales Flow & Billing Operations",
       },
     ],
-    heroImage: "/assets/mobile/pc1.png",
-    statusBadge: "Published on Google Play Store",
+    heroImage: "/assets/mobile/counter365_banner.png",
+    statusBadge: "Live on Google Play",
     storeStatus: "Live on Google Play Store",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.counterpro.app",
   },
   {
     id: "stylefleet",
@@ -248,6 +254,10 @@ export const MOBILE_APPS: MobileApp[] = [
     ],
     screenshots: [
       {
+        url: "/assets/mobile/stylefleet_banner.png",
+        caption: "StyleFleet Official Store Showcase: Run your salon smarter (customers, appointments, services & sales)",
+      },
+      {
         url: "/assets/mobile/Stylefleet 1.jpg",
         caption: "Play Store Screen 1: Modern Salon Booking & Interface",
       },
@@ -280,10 +290,11 @@ export const MOBILE_APPS: MobileApp[] = [
         caption: "Play Store Screen 8: Booking Reminders & Notifications",
       },
     ],
-    heroImage: "/assets/mobile/Stylefleet 1.jpg",
+    heroImage: "/assets/mobile/stylefleet_banner.png",
     dashboardImage: "/assets/mobile/Royal Cuts & Spa Dashboard.png",
-    statusBadge: "Cross-Platform Ecosystem",
-    storeStatus: "Prepared for Play Store & App Store Distribution",
+    statusBadge: "Live on Google Play",
+    storeStatus: "Live on Google Play Store",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.stylefleet.app",
   },
 ];
 

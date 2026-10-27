@@ -409,7 +409,15 @@ export const Hero: React.FC = () => {
                             Counter 365 (Retail POS)
                           </span>
                         </div>
-                        <span className="badge badge-indigo">Google Play Store</span>
+                        <a
+                          href="https://play.google.com/store/apps/details?id=com.counterpro.app"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="badge badge-indigo"
+                          style={{ textDecoration: 'none' }}
+                        >
+                          Google Play ↗
+                        </a>
                       </div>
                       <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '0.75rem', lineHeight: 1.5 }}>
                         Retail POS mobile checkout, sub-second item catalog virtualization, automated WhatsApp digital receipts &amp; supervisor security controls.
@@ -437,7 +445,15 @@ export const Hero: React.FC = () => {
                             StyleFleet (Salon Platform)
                           </span>
                         </div>
-                        <span className="badge badge-teal">Cross-Platform Sync</span>
+                        <a
+                          href="https://play.google.com/store/apps/details?id=com.stylefleet.app"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="badge badge-teal"
+                          style={{ textDecoration: 'none' }}
+                        >
+                          Google Play ↗
+                        </a>
                       </div>
                       <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '0.75rem', lineHeight: 1.5 }}>
                         End-to-end salon management: appointment calendars, stylist seat allocation, service catalogs, and live sync with the Royal Cuts &amp; Spa web dashboard.
