@@ -62,9 +62,11 @@ export const ContactSection: React.FC = () => {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
             gap: '2.5rem',
             alignItems: 'flex-start',
+            width: '100%',
+            minWidth: 0,
           }}
         >
           {/* Left Column: Direct Contact Channels & Quick Cards */}

@@ -232,10 +232,14 @@ export const MobileAppsSection: React.FC = () => {
             transition={{ type: 'spring', stiffness: 100, damping: 20 }}
             style={{
               backgroundColor: 'var(--bg-canvas)',
-              padding: 'clamp(1.5rem, 3.5vw, 2.75rem)',
+              padding: 'clamp(1.25rem, 3vw, 2.75rem)',
               borderRadius: '32px',
               border: '1px solid rgba(0, 0, 0, 0.08)',
               boxShadow: '0 20px 40px -15px rgba(0, 0, 0, 0.05)',
+              width: '100%',
+              maxWidth: '100%',
+              boxSizing: 'border-box',
+              overflow: 'hidden',
             }}
           >
             {/* Header Strip with Live Play Store CTA */}
@@ -249,9 +253,10 @@ export const MobileAppsSection: React.FC = () => {
                 paddingBottom: '2rem',
                 borderBottom: '1px solid rgba(0, 0, 0, 0.08)',
                 marginBottom: '2.5rem',
+                width: '100%',
               }}
             >
-              <div>
+              <div style={{ maxWidth: '100%', minWidth: 0 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '0.5rem' }}>
                   <h3 style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.4rem)', fontFamily: 'var(--font-display)', fontWeight: 800 }}>
                     {selectedApp.name}
@@ -264,7 +269,7 @@ export const MobileAppsSection: React.FC = () => {
                     Built from Scratch (Android &amp; iOS)
                   </span>
                 </div>
-                <p style={{ fontSize: '1.15rem', color: 'var(--accent-primary)', fontWeight: 700 }}>
+                <p style={{ fontSize: '1.15rem', color: 'var(--accent-primary)', fontWeight: 700, margin: 0 }}>
                   {selectedApp.tagline}
                 </p>
               </div>
@@ -293,16 +298,9 @@ export const MobileAppsSection: React.FC = () => {
             </div>
 
             {/* Split Grid: Left Device Visuals & Play Store Showcase, Right Technical Deep-Dive */}
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                gap: '3rem',
-                alignItems: 'flex-start',
-              }}
-            >
+            <div className="app-showcase-grid">
               {/* Left Column: Photorealistic Phone Frame Carousel + Store Banner */}
-              <div>
+              <div className="app-showcase-column">
                 <div style={{ marginBottom: '1.25rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
                   <span
                     style={{
@@ -461,7 +459,7 @@ export const MobileAppsSection: React.FC = () => {
               </div>
 
               {/* Right Column: Verified Contributions & Engineering Architecture */}
-              <div>
+              <div className="app-showcase-content">
                 {/* Built from Scratch Highlights Card */}
                 <div
                   style={{
@@ -471,6 +469,8 @@ export const MobileAppsSection: React.FC = () => {
                     padding: '1.35rem 1.5rem',
                     marginBottom: '2rem',
                     boxShadow: '0 8px 24px -4px rgba(79, 70, 229, 0.06)',
+                    width: '100%',
+                    boxSizing: 'border-box',
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
@@ -479,23 +479,23 @@ export const MobileAppsSection: React.FC = () => {
                       Built from Scratch for Android &amp; iOS
                     </span>
                   </div>
-                  <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                  <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', lineHeight: 1.55, margin: 0, overflowWrap: 'break-word' }}>
                     Developed from scratch at <strong>Tecstellar Solutions</strong>. I established the cross-platform architecture using <strong>React Native &amp; Expo</strong>, ensuring single-codebase parity across Android APK/AAB and iOS builds, integrating Supabase authentication and offline local caching.
                   </p>
                 </div>
 
                 {/* Product Purpose */}
-                <div style={{ marginBottom: '2rem' }}>
+                <div style={{ marginBottom: '2rem', width: '100%', maxWidth: '100%' }}>
                   <h4 style={{ fontSize: '1.2rem', marginBottom: '0.65rem', color: 'var(--text-headline)' }}>
                     Product Purpose &amp; Business Value
                   </h4>
-                  <p style={{ fontSize: '1.02rem', color: 'var(--text-secondary)', lineHeight: 1.65 }}>
+                  <p className="app-overview-text">
                     {selectedApp.overview}
                   </p>
                 </div>
 
                 {/* Verified Contribution */}
-                <div style={{ marginBottom: '2rem' }}>
+                <div style={{ marginBottom: '2rem', width: '100%', maxWidth: '100%' }}>
                   <h4
                     style={{
                       fontSize: '1.2rem',
@@ -509,7 +509,7 @@ export const MobileAppsSection: React.FC = () => {
                     <CheckCircle2 size={18} style={{ color: 'var(--accent-emerald)' }} />
                     What I Personally Implemented at Tecstellar Solutions
                   </h4>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', width: '100%' }}>
                     {selectedApp.verifiedContribution.map((item, idx) => (
                       <div
                         key={idx}
@@ -520,6 +520,7 @@ export const MobileAppsSection: React.FC = () => {
                           fontSize: '0.95rem',
                           color: 'var(--text-secondary)',
                           lineHeight: 1.55,
+                          overflowWrap: 'break-word',
                         }}
                       >
                         <span
@@ -532,22 +533,23 @@ export const MobileAppsSection: React.FC = () => {
                             flexShrink: 0,
                           }}
                         />
-                        <span>{item}</span>
+                        <span style={{ minWidth: 0, flex: 1, overflowWrap: 'break-word' }}>{item}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Core Key Features */}
-                <div style={{ marginBottom: '2rem' }}>
+                <div style={{ marginBottom: '2rem', width: '100%', maxWidth: '100%' }}>
                   <h4 style={{ fontSize: '1.2rem', marginBottom: '0.85rem', color: 'var(--text-headline)' }}>
                     Key Functionality Delivered
                   </h4>
                   <div
                     style={{
                       display: 'grid',
-                      gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+                      gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))',
                       gap: '1rem',
+                      width: '100%',
                     }}
                   >
                     {selectedApp.keyFeatures.map((feat, idx) => (
@@ -559,6 +561,8 @@ export const MobileAppsSection: React.FC = () => {
                           backgroundColor: '#FFFFFF',
                           border: '1px solid rgba(0, 0, 0, 0.06)',
                           boxShadow: '0 2px 8px rgba(0, 0, 0, 0.02)',
+                          minWidth: 0,
+                          boxSizing: 'border-box',
                         }}
                       >
                         <div
@@ -568,11 +572,12 @@ export const MobileAppsSection: React.FC = () => {
                             fontSize: '0.98rem',
                             color: 'var(--text-headline)',
                             marginBottom: '0.35rem',
+                            overflowWrap: 'break-word',
                           }}
                         >
                           {feat.title}
                         </div>
-                        <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+                        <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.5, overflowWrap: 'break-word' }}>
                           {feat.description}
                         </div>
                       </div>
@@ -581,11 +586,11 @@ export const MobileAppsSection: React.FC = () => {
                 </div>
 
                 {/* Technical Challenges & Solutions */}
-                <div style={{ marginBottom: '2rem' }}>
+                <div style={{ marginBottom: '2rem', width: '100%', maxWidth: '100%' }}>
                   <h4 style={{ fontSize: '1.2rem', marginBottom: '0.85rem', color: 'var(--text-headline)' }}>
                     Engineering Challenges &amp; Solutions
                   </h4>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', width: '100%' }}>
                     {selectedApp.technicalChallenges.map((item, idx) => (
                       <div
                         key={idx}
@@ -595,12 +600,14 @@ export const MobileAppsSection: React.FC = () => {
                           borderLeft: '4px solid var(--accent-primary)',
                           backgroundColor: '#FFFFFF',
                           border: '1px solid rgba(0, 0, 0, 0.06)',
+                          minWidth: 0,
+                          boxSizing: 'border-box',
                         }}
                       >
-                        <div style={{ fontSize: '0.9rem', fontWeight: 800, color: 'var(--text-headline)', marginBottom: '0.35rem' }}>
+                        <div style={{ fontSize: '0.9rem', fontWeight: 800, color: 'var(--text-headline)', marginBottom: '0.35rem', overflowWrap: 'break-word' }}>
                           Challenge: {item.challenge}
                         </div>
-                        <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+                        <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', overflowWrap: 'break-word' }}>
                           <strong style={{ color: 'var(--accent-emerald)' }}>Solution:</strong> {item.solution}
                         </div>
                       </div>

@@ -102,9 +102,11 @@ export const Hero: React.FC = () => {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '3.5rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
+            gap: 'clamp(2rem, 4vw, 3.5rem)',
             alignItems: 'center',
+            width: '100%',
+            minWidth: 0,
           }}
           className="hero-grid"
         >
@@ -271,7 +273,7 @@ export const Hero: React.FC = () => {
           >
             <div
               style={{
-                padding: '1.75rem',
+                padding: 'clamp(1.15rem, 2.5vw, 1.75rem)',
                 borderRadius: '32px',
                 backgroundColor: '#FFFFFF',
                 border: '1px solid rgba(0, 0, 0, 0.07)',
@@ -279,6 +281,10 @@ export const Hero: React.FC = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '1.25rem',
+                width: '100%',
+                maxWidth: '100%',
+                boxSizing: 'border-box',
+                overflow: 'hidden',
               }}
             >
               {/* Header Bar with Code Tab Selector */}
@@ -291,6 +297,7 @@ export const Hero: React.FC = () => {
                   borderBottom: '1px solid rgba(0, 0, 0, 0.06)',
                   flexWrap: 'wrap',
                   gap: '0.75rem',
+                  width: '100%',
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
@@ -319,6 +326,9 @@ export const Hero: React.FC = () => {
                     padding: '3px',
                     borderRadius: '9999px',
                     gap: '2px',
+                    maxWidth: '100%',
+                    overflowX: 'auto',
+                    WebkitOverflowScrolling: 'touch',
                   }}
                 >
                   <button
@@ -335,6 +345,7 @@ export const Hero: React.FC = () => {
                       display: 'flex',
                       alignItems: 'center',
                       gap: '0.35rem',
+                      whiteSpace: 'nowrap',
                     }}
                   >
                     <Smartphone size={13} />
@@ -355,10 +366,11 @@ export const Hero: React.FC = () => {
                       display: 'flex',
                       alignItems: 'center',
                       gap: '0.35rem',
+                      whiteSpace: 'nowrap',
                     }}
                   >
                     <Building2 size={13} />
-                    Tecstellar Solutions
+                    Tecstellar
                   </button>
 
                   <button
@@ -375,6 +387,7 @@ export const Hero: React.FC = () => {
                       display: 'flex',
                       alignItems: 'center',
                       gap: '0.35rem',
+                      whiteSpace: 'nowrap',
                     }}
                   >
                     <Sparkles size={13} />
@@ -420,7 +433,7 @@ export const Hero: React.FC = () => {
                           Google Play ↗
                         </a>
                       </div>
-                      <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '0.75rem', lineHeight: 1.5 }}>
+                      <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '0.75rem', lineHeight: 1.5, overflowWrap: 'break-word', wordBreak: 'normal', width: '100%' }}>
                         Retail POS mobile checkout, sub-second item catalog virtualization, automated WhatsApp digital receipts &amp; supervisor security controls.
                       </p>
                       <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
@@ -456,7 +469,7 @@ export const Hero: React.FC = () => {
                           Google Play ↗
                         </a>
                       </div>
-                      <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '0.75rem', lineHeight: 1.5 }}>
+                      <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '0.75rem', lineHeight: 1.5, overflowWrap: 'break-word', wordBreak: 'normal', width: '100%' }}>
                         End-to-end salon management: real-time appointment booking, stylist seat allocation, and live service catalogs.
                       </p>
                       <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>

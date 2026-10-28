@@ -93,8 +93,10 @@ export const ProjectsSection: React.FC = () => {
           layout
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))',
             gap: '2rem',
+            width: '100%',
+            minWidth: 0,
           }}
           className="projects-grid"
         >
