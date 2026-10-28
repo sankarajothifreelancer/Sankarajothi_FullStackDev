@@ -598,19 +598,19 @@ export const FREELANCE_METRICS: FreelanceMetric[] = [
 export const WORK_EXPERIENCE: ExperienceItem[] = [
   {
     id: "tecstellar",
-    role: "Mobile Application Developer",
+    role: "Junior Mobile Application Developer",
     company: "Tecstellar Solutions",
     period: "Aug 2026 – Present (Current Employment)",
     location: "Remote",
     type: "Current Full-Time Engineering Role",
     summary:
-      "Working as Mobile Application Developer at Tecstellar Solutions. Architected and built Counter 365 and StyleFleet from scratch for both Android and iOS platforms using React Native, Expo, and Supabase.",
+      "Working as Junior Mobile Application Developer at Tecstellar Solutions. Developing and maintaining cross-platform features for Counter 365 and StyleFleet on Android and iOS using React Native, Expo, and Supabase.",
     responsibilities: [
-      "Architected and built two production mobile applications (Counter 365 & StyleFleet) from scratch for both Android and iOS using React Native and Expo.",
-      "Engineered Counter 365, a high-speed point-of-sale retail billing app, featuring 3-tap checkout, sub-second item search, customer/vendor ledgers, and automated 1-click WhatsApp digital receipts.",
-      "Engineered StyleFleet, a salon and spa business operations platform with interactive stylist appointment booking, service menus, and real-time synchronization to a companion web management dashboard.",
-      "Integrated Supabase backend services, real-time subscriptions, optimistic concurrency checks, and offline data sync queues.",
-      "Handled complete release pipelines via EAS Build and published production Android builds on the Google Play Store.",
+      "Develop and maintain cross-platform application features for Android and iOS using React Native and Expo.",
+      "Contribute to Counter 365, a point-of-sale and billing application, including mobile interfaces, application workflows, and backend integration.",
+      "Contribute to StyleFleet, a salon management application, across mobile applications and web-based dashboard functionality.",
+      "Work with Supabase-backed application services and database-driven features to support business workflows and application functionality.",
+      "Participate in feature implementation, debugging, application testing, and release-related activities.",
     ],
     technologies: [
       "React Native",
