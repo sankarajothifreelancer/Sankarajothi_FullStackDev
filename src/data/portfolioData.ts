@@ -112,7 +112,7 @@ export const PERSONAL_INFO = {
     github: "https://github.com/sankarajothiK",
     portfolio: "https://delightful-speculoos-5f0ad3.netlify.app/",
   },
-  resumePath: "/Sankarajothi_K_Resume.pdf?v=20261028",
+  resumePath: "/Sankarajothi_K_Developer_Resume.pdf?v=20261028_final",
 };
 
 export const MOBILE_APPS: MobileApp[] = [

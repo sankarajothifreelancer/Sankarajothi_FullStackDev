@@ -216,7 +216,7 @@ export const Navbar: React.FC = () => {
             href={PERSONAL_INFO.resumePath}
             target="_blank"
             rel="noopener noreferrer"
-            download="Sankarajothi_K_Resume.pdf"
+            download="Sankarajothi_K_Developer_Resume.pdf"
             className="btn btn-secondary btn-sm"
             style={{ borderRadius: '9999px', padding: '0.4rem 0.95rem', fontSize: '0.82rem' }}
           >
@@ -332,7 +332,7 @@ export const Navbar: React.FC = () => {
                   href={PERSONAL_INFO.resumePath}
                   target="_blank"
                   rel="noopener noreferrer"
-                  download="Sankarajothi_K_Resume.pdf"
+                  download="Sankarajothi_K_Developer_Resume.pdf"
                   className="btn btn-secondary btn-md"
                   style={{ flex: 1, borderRadius: '14px' }}
                   onClick={() => setMobileMenuOpen(false)}

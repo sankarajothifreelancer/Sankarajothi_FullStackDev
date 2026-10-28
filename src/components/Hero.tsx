@@ -182,7 +182,7 @@ export const Hero: React.FC = () => {
                 href={PERSONAL_INFO.resumePath}
                 target="_blank"
                 rel="noopener noreferrer"
-                download="Sankarajothi_K_Resume.pdf"
+                download="Sankarajothi_K_Developer_Resume.pdf"
                 className="btn btn-secondary btn-lg"
               >
                 <FileText size={18} />

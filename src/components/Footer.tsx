@@ -143,7 +143,7 @@ export const Footer: React.FC = () => {
                     href={PERSONAL_INFO.resumePath}
                     target="_blank"
                     rel="noopener noreferrer"
-                    download="Sankarajothi_K_Resume.pdf"
+                    download="Sankarajothi_K_Developer_Resume.pdf"
                     style={{ fontSize: '0.88rem', color: 'var(--accent-primary)', fontWeight: 700 }}
                   >
                     Download Resume (PDF)
