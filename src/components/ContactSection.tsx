@@ -237,6 +237,7 @@ export const ContactSection: React.FC = () => {
                   href={PERSONAL_INFO.resumePath}
                   target="_blank"
                   rel="noopener noreferrer"
+                  download="Sankarajothi_K_Resume.pdf"
                   className="btn btn-secondary btn-sm"
                   style={{ justifyContent: 'flex-start' }}
                 >
