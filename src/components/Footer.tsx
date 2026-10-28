@@ -181,7 +181,7 @@ export const Footer: React.FC = () => {
           }}
         >
           <div>
-            &copy; {new Date().getFullYear()} {PERSONAL_INFO.name}. Architected with React, TypeScript &amp; Framer Motion.
+            &copy; {new Date().getFullYear()} {PERSONAL_INFO.name}. All rights reserved.
           </div>
           <div>
             Kalugumalai, Tamil Nadu, India • Open to Global Remote Opportunities

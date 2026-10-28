@@ -263,11 +263,6 @@ export const MobileAppsSection: React.FC = () => {
                   <span className="badge badge-indigo">
                     Built from Scratch (Android &amp; iOS)
                   </span>
-                  {selectedApp.internalOrAltName && (
-                    <span className="badge badge-neutral">
-                      Ref: {selectedApp.internalOrAltName}
-                    </span>
-                  )}
                 </div>
                 <p style={{ fontSize: '1.15rem', color: 'var(--accent-primary)', fontWeight: 700 }}>
                   {selectedApp.tagline}
@@ -319,9 +314,6 @@ export const MobileAppsSection: React.FC = () => {
                     }}
                   >
                     Google Play Store Interface ({selectedApp.screenshots.length} Screens)
-                  </span>
-                  <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--accent-primary)' }}>
-                    100% Full Screen View (Zero Crop)
                   </span>
                 </div>
 
@@ -466,40 +458,6 @@ export const MobileAppsSection: React.FC = () => {
                     )}
                   </div>
                 </div>
-
-                {/* StyleFleet Web Dashboard Preview if available */}
-                {selectedApp.dashboardImage && (
-                  <div
-                    style={{
-                      borderRadius: '20px',
-                      overflow: 'hidden',
-                      border: '1px solid rgba(0, 0, 0, 0.08)',
-                      boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.06)',
-                      backgroundColor: '#FFFFFF',
-                      marginTop: '1.25rem',
-                    }}
-                  >
-                    <img
-                      src={selectedApp.dashboardImage}
-                      alt="Companion Web Management Dashboard"
-                      style={{ width: '100%', height: 'auto', display: 'block' }}
-                    />
-                    <div
-                      style={{
-                        padding: '0.85rem 1.25rem',
-                        backgroundColor: '#FFFFFF',
-                        borderTop: '1px solid rgba(0, 0, 0, 0.06)',
-                      }}
-                    >
-                      <div style={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--text-headline)' }}>
-                        Companion Web Management Portal (Royal Cuts &amp; Spa)
-                      </div>
-                      <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)' }}>
-                        Synchronized with mobile apps in real-time via Supabase database triggers.
-                      </div>
-                    </div>
-                  </div>
-                )}
               </div>
 
               {/* Right Column: Verified Contributions & Engineering Architecture */}

@@ -17,7 +17,7 @@ import {
 } from 'lucide-react';
 
 export const Hero: React.FC = () => {
-  const [activePreviewTab, setActivePreviewTab] = useState<'mobile' | 'fullstack' | 'metrics'>('mobile');
+  const [activePreviewTab, setActivePreviewTab] = useState<'mobile' | 'tecstellar' | 'metrics'>('mobile');
 
   const verifiedTechs = [
     { name: 'React Native', category: 'Mobile' },
@@ -342,23 +342,23 @@ export const Hero: React.FC = () => {
                   </button>
 
                   <button
-                    onClick={() => setActivePreviewTab('fullstack')}
+                    onClick={() => setActivePreviewTab('tecstellar')}
                     style={{
                       padding: '0.4rem 0.85rem',
                       borderRadius: '9999px',
                       fontSize: '0.75rem',
                       fontWeight: 700,
-                      backgroundColor: activePreviewTab === 'fullstack' ? '#FFFFFF' : 'transparent',
-                      color: activePreviewTab === 'fullstack' ? 'var(--text-headline)' : 'var(--text-secondary)',
-                      boxShadow: activePreviewTab === 'fullstack' ? '0 2px 8px rgba(0, 0, 0, 0.08)' : 'none',
+                      backgroundColor: activePreviewTab === 'tecstellar' ? '#FFFFFF' : 'transparent',
+                      color: activePreviewTab === 'tecstellar' ? 'var(--text-headline)' : 'var(--text-secondary)',
+                      boxShadow: activePreviewTab === 'tecstellar' ? '0 2px 8px rgba(0, 0, 0, 0.08)' : 'none',
                       transition: 'all 150ms ease',
                       display: 'flex',
                       alignItems: 'center',
                       gap: '0.35rem',
                     }}
                   >
-                    <Layers size={13} />
-                    Full-Stack
+                    <Building2 size={13} />
+                    Tecstellar Solutions
                   </button>
 
                   <button
@@ -407,7 +407,7 @@ export const Hero: React.FC = () => {
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                           <Smartphone size={17} style={{ color: 'var(--accent-primary)' }} />
                           <span style={{ fontWeight: 800, fontSize: '1rem', color: 'var(--text-headline)' }}>
-                            Counter 365 (Retail POS)
+                            Counter 365
                           </span>
                         </div>
                         <a
@@ -443,7 +443,7 @@ export const Hero: React.FC = () => {
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                           <Smartphone size={17} style={{ color: 'var(--accent-azure)' }} />
                           <span style={{ fontWeight: 800, fontSize: '1rem', color: 'var(--text-headline)' }}>
-                            StyleFleet (Salon Platform)
+                            StyleFleet
                           </span>
                         </div>
                         <a
@@ -457,12 +457,12 @@ export const Hero: React.FC = () => {
                         </a>
                       </div>
                       <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '0.75rem', lineHeight: 1.5 }}>
-                        End-to-end salon management: appointment calendars, stylist seat allocation, service catalogs, and live sync with the Royal Cuts &amp; Spa web dashboard.
+                        End-to-end salon management: real-time appointment booking, stylist seat allocation, and live service catalogs.
                       </p>
                       <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
                         <span className="badge badge-neutral">React Native</span>
+                        <span className="badge badge-neutral">Expo</span>
                         <span className="badge badge-neutral">Supabase Realtime</span>
-                        <span className="badge badge-neutral">Web Dashboard</span>
                       </div>
                     </div>
 
@@ -484,9 +484,9 @@ export const Hero: React.FC = () => {
                   </motion.div>
                 )}
 
-                {activePreviewTab === 'fullstack' && (
+                {activePreviewTab === 'tecstellar' && (
                   <motion.div
-                    key="fullstack-preview"
+                    key="tecstellar-preview"
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -8 }}
@@ -504,26 +504,26 @@ export const Hero: React.FC = () => {
                         lineHeight: 1.7,
                       }}
                     >
-                      <div><span style={{ color: '#818CF8' }}>export const</span> productionStack = &#123;</div>
+                      <div><span style={{ color: '#818CF8' }}>export const</span> currentRole = &#123;</div>
                       <div style={{ paddingLeft: '1.25rem' }}>company: <span style={{ color: '#34D399' }}>'Tecstellar Solutions'</span>,</div>
-                      <div style={{ paddingLeft: '1.25rem' }}>mobileFramework: <span style={{ color: '#60A5FA' }}>'React Native + Expo EAS'</span>,</div>
-                      <div style={{ paddingLeft: '1.25rem' }}>cloudDatabase: <span style={{ color: '#FCD34D' }}>'Supabase (PostgreSQL)'</span>,</div>
-                      <div style={{ paddingLeft: '1.25rem' }}>webArchitecture: <span style={{ color: '#F472B6' }}>'React.js + Tailwind CSS'</span>,</div>
-                      <div style={{ paddingLeft: '1.25rem' }}>deliveries: <span style={{ color: '#34D399' }}>'10+ verified client deployments'</span></div>
+                      <div style={{ paddingLeft: '1.25rem' }}>title: <span style={{ color: '#60A5FA' }}>'Mobile Application Developer'</span>,</div>
+                      <div style={{ paddingLeft: '1.25rem' }}>timeline: <span style={{ color: '#FCD34D' }}>'Aug 2026 – Present (Remote)'</span>,</div>
+                      <div style={{ paddingLeft: '1.25rem' }}>appsBuiltFromScratch: [<span style={{ color: '#34D399' }}>'Counter 365'</span>, <span style={{ color: '#34D399' }}>'StyleFleet'</span>],</div>
+                      <div style={{ paddingLeft: '1.25rem' }}>platforms: [<span style={{ color: '#60A5FA' }}>'Android'</span>, <span style={{ color: '#60A5FA' }}>'iOS'</span>],</div>
                       <div>&#125;;</div>
                     </div>
 
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
                       <div style={{ padding: '0.85rem', background: 'var(--bg-canvas)', borderRadius: '16px' }}>
-                        <div style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--text-tertiary)' }}>REALTIME PIPELINE</div>
+                        <div style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--text-tertiary)' }}>MOBILE ARCHITECTURE</div>
                         <div style={{ fontSize: '0.88rem', fontWeight: 800, color: 'var(--text-headline)', marginTop: '2px' }}>
-                          Supabase Database
+                          React Native &amp; Expo
                         </div>
                       </div>
                       <div style={{ padding: '0.85rem', background: 'var(--bg-canvas)', borderRadius: '16px' }}>
-                        <div style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--text-tertiary)' }}>APP RELEASE PIPELINE</div>
+                        <div style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--text-tertiary)' }}>CLOUD DATABASE</div>
                         <div style={{ fontSize: '0.88rem', fontWeight: 800, color: 'var(--text-headline)', marginTop: '2px' }}>
-                          Google Play Console
+                          Supabase Realtime
                         </div>
                       </div>
                     </div>

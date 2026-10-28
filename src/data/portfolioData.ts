@@ -119,7 +119,6 @@ export const MOBILE_APPS: MobileApp[] = [
   {
     id: "counter365",
     name: "Counter 365",
-    internalOrAltName: "Accounta365 / Retail POS",
     tagline: "Point-of-Sale & Retail Billing Mobile Application",
     role: "Mobile Application Developer",
     company: "Tecstellar Solutions",
@@ -135,7 +134,7 @@ export const MOBILE_APPS: MobileApp[] = [
       "TypeScript",
     ],
     overview:
-      "Counter 365 (developed at Tecstellar Solutions, also referenced as Accounta365) is a production-grade point-of-sale and retail billing mobile application built from scratch for both Android and iOS. Engineered to modernize high-speed counter checkout, inventory tracking, and paperless digital receipts for retail businesses, tea stalls, and grocery counters. Published and active on Google Play Store.",
+      "Counter 365 is a production-grade point-of-sale and retail billing mobile application built from scratch for both Android and iOS at Tecstellar Solutions. Engineered to modernize high-speed counter checkout, inventory tracking, and paperless digital receipts for retail businesses, tea stalls, and grocery counters. Published and active on Google Play Store.",
     verifiedContribution: [
       "Architected and built the mobile application from scratch for both Android and iOS platforms using React Native and Expo.",
       "Engineered touch-optimized mobile billing and checkout interfaces, cutting transaction time to under 3 taps.",
@@ -218,12 +217,11 @@ export const MOBILE_APPS: MobileApp[] = [
   {
     id: "stylefleet",
     name: "StyleFleet",
-    internalOrAltName: "Selfit / Salon & Spa Management",
     tagline: "Salon, Spa & Stylist Business Operations Platform",
     role: "Mobile Application Developer",
     company: "Tecstellar Solutions",
     timeline: "Aug 2026 – Present (Current Employment)",
-    platform: ["Android (Google Play)", "iOS", "Web Dashboard"],
+    platform: ["Android (Google Play)", "iOS", "React Native"],
     builtFromScratch: true,
     technologies: [
       "React Native",
@@ -234,13 +232,12 @@ export const MOBILE_APPS: MobileApp[] = [
       "Google Play Console",
     ],
     overview:
-      "StyleFleet (confirmed public name at Tecstellar Solutions, internally referenced as Selfit) is an end-to-end salon and spa management platform built from scratch for Android and iOS using React Native. It coordinates appointments, stylist chairs, service menus, and revenue with an administrative web dashboard (Royal Cuts & Spa) for managers. Published and active on Google Play Store.",
+      "StyleFleet is an end-to-end salon and spa business operations platform built from scratch for Android and iOS using React Native at Tecstellar Solutions. It coordinates appointments, stylist chairs, service menus, and client scheduling with real-time Supabase cloud synchronization. Published and active on Google Play Store.",
     verifiedContribution: [
       "Architected and developed the cross-platform mobile apps from scratch for Android and iOS using React Native and Expo.",
       "Engineered real-time appointment booking workflows, stylist chair scheduling, and slot availability filters.",
       "Created the interactive service menu catalog showcasing haircuts, spa treatments, pricing, and duration estimates.",
       "Integrated Supabase real-time database subscriptions to synchronize appointment slots and stylist availability with zero data conflicts.",
-      "Contributed to frontend implementation of the centralized web dashboard ('Royal Cuts & Spa Dashboard') for salon managers.",
       "Created 8 high-definition Play Store store release assets and managed release builds via EAS and Play Console.",
     ],
     keyFeatures: [
@@ -257,8 +254,8 @@ export const MOBILE_APPS: MobileApp[] = [
         description: "Dynamic staff scheduling balancing client appointments across specialists and tracking live service statuses.",
       },
       {
-        title: "Instant Mobile-to-Web Parity",
-        description: "Real-time Supabase triggers synchronizing the manager's web dashboard with client and stylist mobile applications.",
+        title: "Instant Real-Time Parity",
+        description: "Real-time Supabase triggers synchronizing appointment queues with client and stylist mobile applications.",
       },
     ],
     technicalChallenges: [
@@ -274,7 +271,7 @@ export const MOBILE_APPS: MobileApp[] = [
     metricsOrScope: [
       "Built from scratch for Android & iOS via React Native",
       "8 high-definition Play Store release screens prepared and verified",
-      "Cross-platform parity across Android, iOS, and Web management dashboard",
+      "Cross-platform parity across Android and iOS devices",
       "Supabase real-time database synchronization with zero conflicts",
     ],
     screenshots: [
@@ -313,7 +310,6 @@ export const MOBILE_APPS: MobileApp[] = [
     ],
     heroImage: "/assets/mobile/stylefleet_banner.png",
     iconImage: "/assets/mobile/stylefleet-icon.png",
-    dashboardImage: "/assets/mobile/Royal Cuts & Spa Dashboard.png",
     statusBadge: "Live on Google Play",
     storeStatus: "Live on Google Play Store (Android & iOS Architecture)",
     playStoreUrl: "https://play.google.com/store/apps/details?id=com.stylefleet.app",
@@ -605,7 +601,7 @@ export const WORK_EXPERIENCE: ExperienceItem[] = [
     role: "Mobile Application Developer",
     company: "Tecstellar Solutions",
     period: "Aug 2026 – Present (Current Employment)",
-    location: "Remote / Hybrid",
+    location: "Remote",
     type: "Current Full-Time Engineering Role",
     summary:
       "Working as Mobile Application Developer at Tecstellar Solutions. Architected and built Counter 365 and StyleFleet from scratch for both Android and iOS platforms using React Native, Expo, and Supabase.",
